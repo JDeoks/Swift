@@ -8,15 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var usernameStack: UIStackView!
+    @IBOutlet var passwordStack: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-
-    @IBOutlet var uiTitle: UILabel!
-    
-    @IBAction func sayHello(_ sender: Any) {
+        
+        usernameStack?.layer.borderWidth = 0.5
+        usernameStack?.layer.borderColor = UIColor.red.cgColor
+        passwordStack?.layer.borderWidth = 0.5
+        passwordStack?.layer.borderColor = UIColor.red.cgColor
     }
 }
 

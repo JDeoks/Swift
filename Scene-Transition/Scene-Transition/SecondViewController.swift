@@ -15,5 +15,8 @@ class SecondViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true)
     }
+    @IBAction func backByPop(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 

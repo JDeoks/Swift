@@ -16,8 +16,14 @@ class ViewController: UIViewController {
 
     @IBAction func moveNext(_ sender: Any) {
         let uvc: UIViewController? = self.storyboard?.instantiateViewController(identifier: "SecondVC")
-        uvc?.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        uvc?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(uvc!, animated: true)
+    }
+    @IBAction func moveByNav(_ sender: Any) {
+        guard let uvc = self.storyboard?.instantiateViewController(identifier: "SecondVC") else {
+            return
+        }
+        self.navigationController?.pushViewController(uvc, animated: true)
     }
 }
 

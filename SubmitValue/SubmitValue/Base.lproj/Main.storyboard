@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vae-tJ-wGV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aTE-zQ-MHa">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="-30" y="-1"/>
         </scene>
-        <!--View Controller-->
+        <!--설정-->
         <scene sceneID="xAC-bG-5Mu">
             <objects>
                 <viewController id="vae-tJ-wGV" customClass="ViewController" customModule="SubmitValue" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="clE-Cp-6Pq">
-                                <rect key="frame" x="22.666666666666657" y="268" width="347.66666666666674" height="341.33333333333326"/>
+                                <rect key="frame" x="22.666666666666657" y="290" width="347.66666666666674" height="341.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="euz-AL-O4c">
                                         <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="237"/>
@@ -204,6 +204,13 @@
                             <constraint firstItem="clE-Cp-6Pq" firstAttribute="centerX" secondItem="fB9-sn-7Pk" secondAttribute="centerX" id="Abz-Et-65Q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="설정" id="oyn-AZ-ypr">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Du2-iF-OVk">
+                            <connections>
+                                <action selector="submitByNav:" destination="vae-tJ-wGV" id="K6D-F6-RWA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailInput" destination="Rre-mk-8wS" id="e2F-hL-6hh"/>
                         <outlet property="interval" destination="9Au-Dl-PXT" id="9EW-8D-kGD"/>
@@ -214,9 +221,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zK-6a-9Jn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="5"/>
+            <point key="canvasLocation" x="1759.5419847328244" y="4.9295774647887329"/>
         </scene>
-        <!--Result View Controller-->
+        <!--설정 확인-->
         <scene sceneID="JNr-q8-BeO">
             <objects>
                 <viewController storyboardIdentifier="RVC" id="LeR-4m-iIM" customClass="ResultViewController" customModule="SubmitValue" customModuleProvider="target" sceneMemberID="viewController">
@@ -315,6 +322,7 @@
                             <constraint firstItem="i1B-ga-97G" firstAttribute="centerX" secondItem="iE4-iH-7Ea" secondAttribute="centerX" id="gpK-tI-fb5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="설정 확인" id="ISZ-Fs-te0"/>
                     <connections>
                         <outlet property="emailText" destination="LT3-rG-RMm" id="P47-CA-X3d"/>
                         <outlet property="intervalText" destination="0wS-MM-lbj" id="ifT-8d-EAD"/>
@@ -323,7 +331,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TR2-aR-BtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="5"/>
+            <point key="canvasLocation" x="2562.5954198473282" y="4.9295774647887329"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ODY-wv-00K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aTE-zQ-MHa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P2K-XF-5ce">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vae-tJ-wGV" kind="relationship" relationship="rootViewController" id="a34-u5-VX1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhv-1i-gRG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.82442748091603" y="4.9295774647887329"/>
         </scene>
     </scenes>
     <resources>

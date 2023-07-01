@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onSubmit(_ sender: Any) {
-        // rvc가 UIViewController이면 ResultViewController의프로퍼티를 사용하지 못해서 형변환 필요
+        // rvc가 UIViewController이면 ResultViewController의 프로퍼티를 사용하지 못해서 형변환 필요
         guard let rvc = self.storyboard?.instantiateViewController(identifier: "RVC") as? ResultViewController else {
             return
         }
@@ -39,7 +39,19 @@ class ViewController: UIViewController {
         rvc.paramMode = mode.isOn
         rvc.paramInterval = interval.value
         rvc.modalPresentationStyle = .fullScreen
-        present(rvc, animated: true)
+        self.present(rvc, animated: true)
+    }
+    @IBAction func submitByNav(_ sender: Any) {
+        guard let rvc = self.storyboard?.instantiateViewController(identifier: "RVC") as? ResultViewController else {
+            return
+        }
+        
+        // 만든 인스턴스에 값 전송
+        rvc.paramEmail = emailInput.text!
+        rvc.paramMode = mode.isOn
+        rvc.paramInterval = interval.value
+        rvc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(rvc, animated: true)
     }
 }
 

@@ -24,6 +24,7 @@ class PrivacyEditVC: UIViewController {
         intervalText.text = "\(value)분 마다"
     }
     
+    // privacyButtonClicked
     @IBAction func savePrivacy(_ sender: Any) {
 //        sendByParam()
 //        sendByAppDel()

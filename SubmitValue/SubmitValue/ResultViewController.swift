@@ -23,8 +23,7 @@ class ResultViewController: UIViewController{
         print(paramEmail, paramMode, paramInterval)
         emailText.text = paramEmail
         modeText.text = paramMode ? "갱신함" : "갱신하지 않음"
-        let value: Int = Int(paramInterval)
-        intervalText.text = "\(value)분마다"
+        intervalText.text = "\(Int(paramInterval))분마다"
     }
     
     @IBAction func onBack(_ sender: Any) {

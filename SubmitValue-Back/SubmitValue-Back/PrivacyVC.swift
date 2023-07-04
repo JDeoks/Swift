@@ -23,10 +23,9 @@ class PrivacyVC: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // 뷰가 다시 보이기 전에 전달 받은 값을 뷰에 적
-        emailText.text = paramEmail
-        autoUpdateText.text = paramMode ? "갱신함": "갱신하지 않음"
-        intervalText.text = "\(Int(paramInterval))분 마다"
+//        updateByParam()
+//        updateByAppDel()
+        updateByUD()
     }
     
     @IBAction func editPrivacy(_ sender: Any) {
@@ -34,5 +33,29 @@ class PrivacyVC: UIViewController{
             return
         }
         self.navigationController?.pushViewController(editVC, animated: true)
+    }
+    
+    /// 직접전달 사용
+    func updateByParam() {
+        emailText.text = paramEmail
+        autoUpdateText.text = paramMode ? "갱신함": "갱신하지 않음"
+        intervalText.text = "\(Int(paramInterval))분 마다"
+    }
+    
+    /// 엡 델리게이트 사용
+    func updateByAppDel() {
+        // 앱 델리게이트 인스턴스 가져옴
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        emailText.text = appDel.paramEmail
+        autoUpdateText.text = appDel.paramMode ? "갱신함": "갱신하지 않음"
+        intervalText.text = "\(Int(appDel.paramInterval))분 마다"
+    }
+    
+    /// 유저 디폴트 사용
+    func updateByUD() {
+        let ud = UserDefaults.standard
+        emailText.text = ud.value(forKey: "email") as? String
+        autoUpdateText.text = ud.bool(forKey: "mode") ? "갱신함": "갱신하지 않음"
+        intervalText.text = "\(Int(ud.double(forKey: "interval")))분 마다"
     }
 }

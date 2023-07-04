@@ -25,14 +25,36 @@ class PrivacyEditVC: UIViewController {
     }
     
     @IBAction func savePrivacy(_ sender: Any) {
-        
-        // 배열에서 마지막 두번째인 전 화면 가져옴
+//        sendByParam()
+//        sendByAppDel()
+        sendByUD()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    /// 이전화면으로 직접 전달
+    func sendByParam() {
         guard let preVC = self.navigationController?.viewControllers[self.navigationController!.viewControllers.count - 2] as? PrivacyVC else {
             return
         }
         preVC.paramEmail = emailInput.text!
         preVC.paramMode = mode.isOn
         preVC.paramInterval = interval.value
-        self.navigationController?.popViewController(animated: true)
     }
+    
+    /// 앱 델리게이트 사용
+    func sendByAppDel() {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        appDel.paramEmail = emailInput.text!
+        appDel.paramMode = mode.isOn
+        appDel.paramInterval = interval.value
+    }
+    
+    /// UserDefaults 사용
+    func sendByUD() {
+        let ud = UserDefaults.standard
+        ud.set(emailInput.text!, forKey: "email")
+        ud.set(mode.isOn, forKey: "mode")
+        ud.set(interval.value, forKey: "interval")
+    }
+    
 }

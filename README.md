@@ -24,3 +24,10 @@ present, dismiss
 텍스트필드 속성  
 First Responder  
 텍스트필드 델리게이트
+
+## UIImagePickerController
+
+UIImagePickerController  
+이미지피커 델리게이트  
+익스텐션 구분  
+// MARK:- 주석

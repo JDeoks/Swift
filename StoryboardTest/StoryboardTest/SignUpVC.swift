@@ -43,7 +43,6 @@ class SignUpVC: UIViewController {
         signUpBtn.layer.cornerRadius = signUpBtn.frame.height/2
  }
     @IBAction func gotoSignIn(_ sender: Any) {
-        print(self.prese)
         self.presentingViewController?.dismiss(animated: true)
     }
     

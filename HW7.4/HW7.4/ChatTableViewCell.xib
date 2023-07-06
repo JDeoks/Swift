@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChatTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTableViewCell" rowHeight="-42" id="Lt0-Y1-L3j" customClass="ChatTableViewCell" customModule="HW7_4" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lt0-Y1-L3j" id="xKW-C6-WkS">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fkl-Tm-cUw">
+                        <rect key="frame" x="12" y="9" width="369" height="72"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="143" translatesAutoresizingMaskIntoConstraints="NO" id="UIZ-Zj-hkt">
+                                <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="Plg-pk-d09"/>
+                                    <constraint firstAttribute="height" constant="72" id="uiH-xA-fDJ"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HgZ-G2-t6Q">
+                                <rect key="frame" x="92" y="12" width="277" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-VY-mhr">
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메시지 미리보기..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQX-Mz-TLp">
+                                        <rect key="frame" x="0.0" y="24" width="277" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fkl-Tm-cUw" firstAttribute="centerY" secondItem="xKW-C6-WkS" secondAttribute="centerY" id="04M-UY-IC0"/>
+                    <constraint firstItem="fkl-Tm-cUw" firstAttribute="leading" secondItem="xKW-C6-WkS" secondAttribute="leading" constant="12" id="3PB-dC-jaV"/>
+                    <constraint firstAttribute="trailing" secondItem="fkl-Tm-cUw" secondAttribute="trailing" constant="12" id="WAv-WY-euN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="messagePreviewLabel" destination="gQX-Mz-TLp" id="zTS-qY-tLD"/>
+                <outlet property="nameLabel" destination="R1Z-VY-mhr" id="kk7-2J-zbF"/>
+                <outlet property="profileImageView" destination="UIZ-Zj-hkt" id="6aK-sB-dW6"/>
+            </connections>
+            <point key="canvasLocation" x="200.76335877862596" y="-109.1549295774648"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="143" width="96" height="96"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

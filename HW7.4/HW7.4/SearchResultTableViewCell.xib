@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchResultTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="59" id="5iW-w0-ho5" customClass="SearchResultTableViewCell" customModule="HW7_4" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5iW-w0-ho5" id="CeR-is-4BF">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4yd-Ja-Fi4">
+                        <rect key="frame" x="8" y="2.6666666666666679" width="377" height="53.666666666666657"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="34" translatesAutoresizingMaskIntoConstraints="NO" id="tyR-kb-djS">
+                                <rect key="frame" x="0.0" y="7" width="40" height="40"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="MJl-Cq-71p"/>
+                                    <constraint firstAttribute="height" constant="40" id="rgy-Yj-3Ls"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pc5-2M-VWh">
+                                <rect key="frame" x="60" y="7.6666666666666679" width="317" height="38.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uf-mk-qqb">
+                                        <rect key="frame" x="0.0" y="0.0" width="317" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메시지 미리보기..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOK-Ti-3sS">
+                                        <rect key="frame" x="0.0" y="19.333333333333336" width="317" height="19.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="4yd-Ja-Fi4" secondAttribute="height" multiplier="7:1" id="Ouc-v6-jYW"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4yd-Ja-Fi4" firstAttribute="centerY" secondItem="CeR-is-4BF" secondAttribute="centerY" id="6No-u8-DhG"/>
+                    <constraint firstItem="4yd-Ja-Fi4" firstAttribute="leading" secondItem="CeR-is-4BF" secondAttribute="leading" constant="8" id="l1V-1p-uu1"/>
+                    <constraint firstAttribute="trailing" secondItem="4yd-Ja-Fi4" secondAttribute="trailing" constant="8" id="t33-B6-4r4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="messagePreviewLabel" destination="dOK-Ti-3sS" id="PRw-P7-2Bg"/>
+                <outlet property="nameLabel" destination="0uf-mk-qqb" id="ncJ-eN-8DP"/>
+                <outlet property="profileImageView" destination="tyR-kb-djS" id="fAN-e7-da9"/>
+            </connections>
+            <point key="canvasLocation" x="330.53435114503816" y="-20.774647887323944"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="34" width="96" height="96"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

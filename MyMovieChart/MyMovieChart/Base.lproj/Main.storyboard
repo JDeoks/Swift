@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oye-Ya-0H9">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21701"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List TableVC-->
+        <scene sceneID="pzX-3p-9uW">
+            <objects>
+                <tableViewController storyboardIdentifier="ListTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oye-Ya-0H9" customClass="ListTableVC" customModule="MyMovieChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ojs-Kq-8Ej">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" rowHeight="81" id="v9h-ia-KGR" customClass="ListTableViewCell" customModule="MyMovieChart" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v9h-ia-KGR" id="52e-2w-35c">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="81"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-Dd-XUF">
+                                            <rect key="frame" x="20" y="8.6666666666666643" width="64" height="63.999999999999993"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="WWV-L2-S2r"/>
+                                                <constraint firstAttribute="width" constant="64" id="d0x-Ea-XFT"/>
+                                                <constraint firstAttribute="width" secondItem="Rtu-Dd-XUF" secondAttribute="height" multiplier="1:1" id="dX0-mN-SzH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-XW-0Vm">
+                                            <rect key="frame" x="98" y="8.6666666666666643" width="173" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="173" id="dR4-VB-wv2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 설명하는 글..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-vJ-i3m">
+                                            <rect key="frame" x="98" y="48" width="187" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="187" id="4IV-JP-XHm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.95" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrC-es-3cv">
+                                            <rect key="frame" x="304.33333333333331" y="49" width="25.666666666666686" height="14.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000-09-04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zp-hR-aF1">
+                                            <rect key="frame" x="281" y="8.6666666666666643" width="72" height="14.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b0s-vJ-i3m" firstAttribute="top" secondItem="mpx-XW-0Vm" secondAttribute="bottom" constant="17.333333333333329" id="4ca-nf-1j8"/>
+                                        <constraint firstItem="9Zp-hR-aF1" firstAttribute="leading" secondItem="mpx-XW-0Vm" secondAttribute="trailing" constant="10" id="6tR-YC-2Fu"/>
+                                        <constraint firstItem="Rtu-Dd-XUF" firstAttribute="centerY" secondItem="52e-2w-35c" secondAttribute="centerY" id="Ajm-fr-StM"/>
+                                        <constraint firstItem="9Zp-hR-aF1" firstAttribute="top" secondItem="mpx-XW-0Vm" secondAttribute="top" id="J2H-Wy-xG4"/>
+                                        <constraint firstItem="mpx-XW-0Vm" firstAttribute="top" secondItem="Rtu-Dd-XUF" secondAttribute="top" id="JVi-9a-aeh"/>
+                                        <constraint firstItem="VrC-es-3cv" firstAttribute="top" secondItem="9Zp-hR-aF1" secondAttribute="bottom" constant="26" id="Rx4-Qx-5yt"/>
+                                        <constraint firstItem="b0s-vJ-i3m" firstAttribute="leading" secondItem="Rtu-Dd-XUF" secondAttribute="trailing" constant="14" id="nSx-KF-oFh"/>
+                                        <constraint firstItem="VrC-es-3cv" firstAttribute="centerX" secondItem="9Zp-hR-aF1" secondAttribute="centerX" id="uqb-CK-Tog"/>
+                                        <constraint firstItem="mpx-XW-0Vm" firstAttribute="leading" secondItem="Rtu-Dd-XUF" secondAttribute="trailing" constant="14" id="x03-Pp-zvw"/>
+                                        <constraint firstItem="Rtu-Dd-XUF" firstAttribute="leading" secondItem="52e-2w-35c" secondAttribute="leading" constant="20" symbolic="YES" id="xx6-Np-NwZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="desc" destination="b0s-vJ-i3m" id="UaY-bq-SjC"/>
+                                    <outlet property="openDate" destination="9Zp-hR-aF1" id="qlT-ne-kHu"/>
+                                    <outlet property="rate" destination="VrC-es-3cv" id="usM-Mz-s9g"/>
+                                    <outlet property="thumbnail" destination="Rtu-Dd-XUF" id="Nvf-ml-p1b"/>
+                                    <outlet property="title" destination="mpx-XW-0Vm" id="RgE-Ib-VdP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oye-Ya-0H9" id="UtL-mj-OL7"/>
+                            <outlet property="delegate" destination="oye-Ya-0H9" id="bBM-f5-cxj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sca-Ah-GZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95.419847328244273" y="-25.35211267605634"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,6 +9,7 @@ import UIKit
 
 class InChatViewController: UIViewController {
 
+    @IBOutlet var messageTextStack: UIStackView!
     @IBOutlet var chatPartnerNameLabel: UILabel!
     @IBOutlet var messageTextField: UITextField!
     
@@ -19,15 +20,28 @@ class InChatViewController: UIViewController {
         uiInit()
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        <#code#>
+    }
+    
+    @objc func keyboardWillAppear(notification: NSNotification){
+        let keyboardFrame: <# Type #> = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            self.messageTextStack.frame.originy -= keyboardHeight
+        }
+    }
     
     @IBAction func backButtonCliked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     func uiInit() {
         chatPartnerNameLabel.text = paramChatPartnerName
         messageTextField.layer.cornerRadius = messageTextField.frame.height / 2
         messageTextField.clipsToBounds = true
-
     }
     
     /*

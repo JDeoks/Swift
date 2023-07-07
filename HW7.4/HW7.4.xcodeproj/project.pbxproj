@@ -51,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AB5C5ED2A58011A00B1FFF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AB5C5E32A57337600B1FFF4 /* ChatValueObject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AB5C5EE2A5801AE00B1FFF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AB5C5EB2A5761CD00B1FFF4 /* SearchResultTableViewCell.xib */,
+				2AB5C5E92A5761B300B1FFF4 /* SearchResultTableViewCell.swift */,
+				2AB5C5DD2A57167500B1FFF4 /* ChatTableViewCell.xib */,
+				2AB5C5E12A572CE600B1FFF4 /* ChatTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AB5C5EF2A5801D400B1FFF4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AC104082A5708D60055C774 /* ViewController.swift */,
+				2AB5C5E72A574F7B00B1FFF4 /* SearchViewController.swift */,
+				2AB5C5E52A5747A400B1FFF4 /* InChatViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2AC103F82A5708D60055C774 = {
 			isa = PBXGroup;
 			children = (
@@ -70,19 +99,14 @@
 		2AC104032A5708D60055C774 /* HW7.4 */ = {
 			isa = PBXGroup;
 			children = (
-				2AC104042A5708D60055C774 /* AppDelegate.swift */,
-				2AC104062A5708D60055C774 /* SceneDelegate.swift */,
-				2AC104082A5708D60055C774 /* ViewController.swift */,
 				2AC1040A2A5708D60055C774 /* Main.storyboard */,
-				2AB5C5E72A574F7B00B1FFF4 /* SearchViewController.swift */,
-				2AB5C5EB2A5761CD00B1FFF4 /* SearchResultTableViewCell.xib */,
-				2AB5C5E52A5747A400B1FFF4 /* InChatViewController.swift */,
-				2AB5C5E92A5761B300B1FFF4 /* SearchResultTableViewCell.swift */,
-				2AB5C5E32A57337600B1FFF4 /* ChatValueObject.swift */,
-				2AB5C5DD2A57167500B1FFF4 /* ChatTableViewCell.xib */,
-				2AB5C5E12A572CE600B1FFF4 /* ChatTableViewCell.swift */,
+				2AB5C5EF2A5801D400B1FFF4 /* Controllers */,
+				2AB5C5ED2A58011A00B1FFF4 /* Models */,
+				2AB5C5EE2A5801AE00B1FFF4 /* Views */,
 				2AC1040D2A5708D80055C774 /* Assets.xcassets */,
 				2AC1040F2A5708D80055C774 /* LaunchScreen.storyboard */,
+				2AC104042A5708D60055C774 /* AppDelegate.swift */,
+				2AC104062A5708D60055C774 /* SceneDelegate.swift */,
 				2AC104122A5708D80055C774 /* Info.plist */,
 			);
 			path = HW7.4;

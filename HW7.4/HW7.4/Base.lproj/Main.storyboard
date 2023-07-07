@@ -288,6 +288,7 @@
                     <connections>
                         <outlet property="chatPartnerNameLabel" destination="6Um-hQ-SsM" id="d46-Vq-E4s"/>
                         <outlet property="messageTextField" destination="srt-ar-CUg" id="bUb-QG-ZH7"/>
+                        <outlet property="messageTextStack" destination="aeJ-XY-rBt" id="Gaq-TZ-hNW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9D-a2-uod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

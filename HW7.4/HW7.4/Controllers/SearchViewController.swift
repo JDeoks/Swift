@@ -22,6 +22,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        initUI()
         self.searchReseultTableView.delegate = self
         self.searchReseultTableView.dataSource = self
         self.searchBarTextField.delegate = self
@@ -30,12 +31,12 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         let searchResultTableViewCell = UINib(nibName: "SearchResultTableViewCell", bundle: nil)
         searchReseultTableView.register(searchResultTableViewCell, forCellReuseIdentifier: "SearchResultTableViewCell")
         
-        uiInit()
+        
         self.searchBarTextField.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
     
-    func uiInit(){
+    func initUI(){
         searchBarStackView.layer.cornerRadius = 6
         searchResultStackView.layer.cornerRadius = 12
     }

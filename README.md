@@ -16,8 +16,9 @@ present, dismiss
 
 ## SubmitValue-Back
 
-커스텀 네비게이션바
-이전화면에 직접 전달, 저장소 이용 전달
+커스텀 네비게이션바  
+이전화면에 직접 전달, 저장소 이용 전달  
+UserDefaults
 
 ## Delegate-TextField
 
@@ -45,4 +46,4 @@ dequeueReusableCell
 [텍스트필드 테두리](https://stackoverflow.com/questions/34007920/specify-border-radius-of-uitextfield-in-swift)  
 [문자열 검색](https://beepeach.tistory.com/189)  
 테이블 뷰 업데이트  
-[키보드 올라올때 텍스트 필드 같이 올리기](https://atelier-chez-moi.tistory.com/99)
+[키보드에 가려지는 텍스트 필드 이동](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md)

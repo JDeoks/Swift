@@ -225,6 +225,10 @@
                                     <constraint firstItem="Qdc-8T-DMi" firstAttribute="leading" secondItem="jzW-w6-mcP" secondAttribute="leading" constant="8" id="eZU-Nr-9TF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-Z1-A8z">
+                                <rect key="frame" x="0.0" y="754" width="390" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aeJ-XY-rBt">
                                 <rect key="frame" x="0.0" y="754" width="390" height="56"/>
                                 <subviews>
@@ -270,10 +274,6 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-Z1-A8z">
-                                <rect key="frame" x="0.0" y="810" width="390" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kr0-gp-mpj"/>
                         <color key="backgroundColor" red="0.60784313725490191" green="0.73333333333333328" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,7 +282,7 @@
                             <constraint firstItem="Kr0-gp-mpj" firstAttribute="trailing" secondItem="aeJ-XY-rBt" secondAttribute="trailing" id="G9a-s9-q9l"/>
                             <constraint firstItem="aeJ-XY-rBt" firstAttribute="leading" secondItem="Kr0-gp-mpj" secondAttribute="leading" id="GXF-aC-798"/>
                             <constraint firstItem="jzW-w6-mcP" firstAttribute="leading" secondItem="Kr0-gp-mpj" secondAttribute="leading" id="T6t-if-WLJ"/>
-                            <constraint firstItem="sGj-Z1-A8z" firstAttribute="top" secondItem="Kr0-gp-mpj" secondAttribute="bottom" id="U4M-Vu-JtB"/>
+                            <constraint firstItem="sGj-Z1-A8z" firstAttribute="top" secondItem="aeJ-XY-rBt" secondAttribute="top" id="U4M-Vu-JtB"/>
                             <constraint firstItem="Q5S-En-ukk" firstAttribute="leading" secondItem="Kr0-gp-mpj" secondAttribute="leading" id="VW0-u6-7fK"/>
                             <constraint firstItem="sGj-Z1-A8z" firstAttribute="bottom" secondItem="frz-DP-SWv" secondAttribute="bottom" id="W9o-kD-yKX"/>
                             <constraint firstItem="Q5S-En-ukk" firstAttribute="top" secondItem="jzW-w6-mcP" secondAttribute="bottom" id="aOz-fn-gCe"/>

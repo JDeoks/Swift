@@ -8,10 +8,7 @@
 import UIKit
 import SnapKit
 
-class InChatViewController: UIViewController, UITextFieldDelegate {
-    
-    var stackViewBottomConstraint: Constraint?
-    var originBottomY: CGFloat = 0.0
+class InChatViewController: UIViewController {
 
     @IBOutlet var messageTextStack: UIStackView!
     @IBOutlet var chatPartnerNameLabel: UILabel!
@@ -24,7 +21,6 @@ class InChatViewController: UIViewController, UITextFieldDelegate {
         initUI()
         
         messageTextField.delegate = self
-        originBottomY = self.messageTextStack.frame.origin.y
         // Do any additional setup after loading the view.
     }
     
@@ -43,9 +39,20 @@ class InChatViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    func initUI() {
+        chatPartnerNameLabel.text = paramChatPartnerName
+        messageTextField.layer.cornerRadius = messageTextField.frame.height * 0.35
+        messageTextField.clipsToBounds = true
+    }
+    
     // keyboardWillShowNotification 알림을 받으면 사용하도록 만든 셀렉터 메소드
     @objc func keyboardWillAppear(notification: NSNotification){
         print("InChatViewController - keyboardWillAppear")
+        
+        // 키보드의 최종 프레임 정보를 나타내는 UserInfoKey
+        guard let keyboardSize: CGRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
         
         // 키보드 애니메이션 지속시간
         guard let keyboardAnimationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
@@ -55,20 +62,14 @@ class InChatViewController: UIViewController, UITextFieldDelegate {
         let animationCurveRawValue: Int = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int ?? 0
         let animationCurve: UIView.AnimationCurve = UIView.AnimationCurve(rawValue: animationCurveRawValue) ?? .easeInOut
         
-        // 애니메이션 속도를 키보드 애니메이션과 동일한 애니메이션 곡선으로 설정
-        UIView.setAnimationCurve(animationCurve)
-        
-        // 키보드의 최종 프레임 정보를 나타내는 UserInfoKey
-        guard let keyboardSize: CGRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        // 제약 조건 업데이트
-        messageTextStack.snp.updateConstraints { make in
-            make.bottom.equalToSuperview().inset(keyboardSize.height)
-        }
-        
-        // 뷰 애니메이션 블록 내에서 애니메이션 실행
-        UIView.animate(withDuration: keyboardAnimationDuration) {
+        // messageTextStack 애니메이션 속성 설정
+        UIView.animate(withDuration: keyboardAnimationDuration, delay: 0, options: [UIView.AnimationOptions(rawValue: UInt(animationCurve.rawValue))]) {
+            // 제약 조건 업데이트
+            self.messageTextStack.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().inset(keyboardSize.height)
+            }
+            
+            // 화면 레이아웃 업데이트
             self.view.layoutIfNeeded()
         }
     }
@@ -84,45 +85,28 @@ class InChatViewController: UIViewController, UITextFieldDelegate {
         // 키보드 애니메이션 커브 저장
         let animationCurveRawValue: Int = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int ?? 0
         let animationCurve: UIView.AnimationCurve = UIView.AnimationCurve(rawValue: animationCurveRawValue) ?? .easeInOut
-        
-        // 애니메이션 속도를 키보드 애니메이션과 동일한 애니메이션 곡선으로 설정
-        UIView.setAnimationCurve(animationCurve)
-        
-        // 제약 조건 업데이트
-        messageTextStack.snp.updateConstraints { make in
-            make.bottom.equalToSuperview()
-        }
-        
-        // 뷰 애니메이션 블록 내에서 애니메이션 실행
-        UIView.animate(withDuration: keyboardAnimationDuration) {
+
+        // messageTextStack 애니메이션 속성 설정
+        UIView.animate(withDuration: keyboardAnimationDuration, delay: 0, options: [UIView.AnimationOptions(rawValue: UInt(animationCurve.rawValue))]) {
+            // 제약 조건 업데이트
+            self.messageTextStack.snp.updateConstraints { make in
+                make.bottom.equalToSuperview()
+            }
+            
+            // 화면 레이아웃 업데이트
             self.view.layoutIfNeeded()
         }
     }
     
+    @IBAction func backButtonCliked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+}
+
+extension InChatViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
-    
-    @IBAction func backButtonCliked(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func initUI() {
-        chatPartnerNameLabel.text = paramChatPartnerName
-        messageTextField.layer.cornerRadius = messageTextField.frame.height * 0.35
-        messageTextField.clipsToBounds = true
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

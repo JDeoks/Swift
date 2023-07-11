@@ -43,7 +43,12 @@ dequeueReusableCell
 ## HW7.4
 
 [nib 커스텀 테이블 셀](https://shark-sea.kr/entry/iOS-TableView-xib%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)  
-[텍스트필드 테두리](https://stackoverflow.com/questions/34007920/specify-border-radius-of-uitextfield-in-swift)  
+[텍스트필드 테두리 곡률 설정](https://stackoverflow.com/questions/34007920/specify-border-radius-of-uitextfield-in-swift)  
 [문자열 검색](https://beepeach.tistory.com/189)  
-테이블 뷰 업데이트  
-[키보드에 가려지는 텍스트 필드 이동](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md)
+테이블 뷰 업데이트
+
+### [키보드에 가려지는 텍스트 필드 이동](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md)
+
+- SnapKit
+- [keyboardAnimationCurveUserInfoKey](https://developer.apple.com/documentation/uikit/uiresponder/1621613-keyboardanimationcurveuserinfoke)
+- UIView.animate(withDuration:delay:options:animations:completion:)

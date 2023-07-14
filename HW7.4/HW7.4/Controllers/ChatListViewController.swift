@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ChatListViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet var chatListTableView: UITableView!
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
 }
 
-extension ViewController:  UITableViewDataSource {
+extension ChatListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.chatList.count

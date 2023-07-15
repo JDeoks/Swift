@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  HW7.4
+//  Scroller
 //
-//  Created by 서정덕 on 2023/07/06.
+//  Created by 서정덕 on 2023/07/14.
 //
 
 import UIKit
@@ -10,8 +10,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

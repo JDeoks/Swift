@@ -14,8 +14,8 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var searchResultStackView: UIStackView!
     @IBOutlet var searchReseultTableView: UITableView!
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    let dataStore = DataStore.shared
+
     // 검색결과의 인덱스를 담음. appDelegate.chatList[searchResult[i]] 로 전체 배열에 접근
     lazy var searchResult: [Int] = []
     
@@ -69,8 +69,8 @@ extension SearchViewController: UITableViewDataSource {
         print("\(searchResult[indexPath.row]).png")
         
         cell.profileImageView.image = UIImage(named: "\(searchResult[indexPath.row]+1).png")
-        cell.nameLabel.text = appDelegate.chatList[searchResult[indexPath.row]].name
-        cell.messagePreviewLabel.text = appDelegate.chatList[searchResult[indexPath.row]].message
+        cell.nameLabel.text = dataStore.chatList[searchResult[indexPath.row]].name
+        cell.messagePreviewLabel.text = dataStore.chatList[searchResult[indexPath.row]].message
         return cell
     }
     
@@ -84,7 +84,7 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 검색한 결과 배열에 추가 후 배열 태이블뷰 업데이트
         let keyword = textField.text!
-        let cl = appDelegate.chatList
+        let cl = dataStore.chatList
         for i in 0..<cl.count {
             let name = cl[i].name!
             let message = cl[i].message!

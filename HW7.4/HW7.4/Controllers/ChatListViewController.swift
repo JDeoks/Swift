@@ -11,8 +11,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet var chatListTableView: UITableView!
     
-    // TODO: 이렇게 AppDelegate 막 참조해도 되나..?
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dataStore = DataStore.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +35,15 @@ class ChatListViewController: UIViewController, UITableViewDelegate {
 extension ChatListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appDelegate.chatList.count
+        return dataStore.chatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // chatListTableView에서 사용할 셀의 인스턴스 생성
         let cell = chatListTableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
         cell.profileImageView.image = UIImage(named: "\(indexPath.row + 1).png")
-        cell.nameLabel.text = appDelegate.chatList[indexPath.row].name
-        cell.messagePreviewLabel.text = appDelegate.chatList[indexPath.row].message
+        cell.nameLabel.text = dataStore.chatList[indexPath.row].name
+        cell.messagePreviewLabel.text = dataStore.chatList[indexPath.row].message
         return cell
     }
     
@@ -55,7 +55,8 @@ extension ChatListViewController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ViewController-didSelectRowAt: \(indexPath.row)번 인덱스 눌림")
         let inChatViewController = self.storyboard?.instantiateViewController(identifier: "InChatViewController") as! InChatViewController
-        inChatViewController.paramChatPartnerName = appDelegate.chatList[indexPath.row].name
+        inChatViewController.hidesBottomBarWhenPushed = true
+        inChatViewController.paramChatPartnerName = dataStore.chatList[indexPath.row].name
         self.navigationController?.pushViewController(inChatViewController, animated: true)
     }
 

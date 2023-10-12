@@ -23,15 +23,15 @@ class MoreViewController: UIViewController, UICollectionViewDelegate {
         
         moreCollectionView.delegate = self
         moreCollectionView.dataSource = self
-        self.moreCollectionView.collectionViewLayout = createCompositionalLayoutForFirst()
+//        self.moreCollectionView.collectionViewLayout = createCompositionalLayoutForFirst()
         moreCollectionView.isScrollEnabled = false
         // Do any additional setup after loading the view.
     }
     
 
-    func createCompositionalLayoutForFirst() -> UICollectionViewLayout {
-        
-    }
+//    func createCompositionalLayoutForFirst() -> UICollectionViewLayout {
+//        
+//    }
 
 }
 

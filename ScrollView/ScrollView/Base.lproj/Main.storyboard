@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sz-Fe-V3a">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="522"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtk-Xw-Tqu">
                                                 <rect key="frame" x="16" y="16" width="361" height="406"/>
-                                                <mutableString key="text">ASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJF</mutableString>
+                                                <string key="text">ASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJFASDFASDFASDFSDFSADFASFSADFSDFALSKDJFHAKSDJFHLASKDJFHLAKSJDHFLKASJDHF,ASKJFHLASKDJF</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -32,8 +32,8 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wtk-Xw-Tqu" secondAttribute="bottom" constant="100" id="HuM-wB-xEs"/>
                                             <constraint firstItem="wtk-Xw-Tqu" firstAttribute="top" secondItem="9sz-Fe-V3a" secondAttribute="top" constant="16" id="Vae-v3-1J0"/>
-                                            <constraint firstAttribute="height" constant="1500" id="YAa-hR-SQ0"/>
                                             <constraint firstAttribute="trailing" secondItem="wtk-Xw-Tqu" secondAttribute="trailing" constant="16" id="bZO-hh-lpv"/>
                                             <constraint firstItem="wtk-Xw-Tqu" firstAttribute="leading" secondItem="9sz-Fe-V3a" secondAttribute="leading" constant="16" id="ua4-BJ-Ifd"/>
                                         </constraints>

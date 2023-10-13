@@ -28,7 +28,7 @@ iOS에서는 직접적으로 스레드를 관리하지 않음(ex. 스레드 2번
 ### GCD(Grand Central Dispatch), Operation
 
 대기 큐에는 두가지가 있음  
-GCD(DispatchQueue), Operation queue
+GCD(Dispatch Queue), Operation queue
 
 GCD / Operation을 사용해 시스템에서 알아서 쓰레드 숫자를 관리함  
 쓰레드보다 더 높은 레벨/차원에서 작업하는 것
@@ -54,7 +54,7 @@ DispatchQueue.global().async {
 }
 // 선언 후 사용
 let queue = DispatchQueue.global()
-queue.async {}
+queue.async { }
 ```
 
 클로저 안의 코드들은 작업의 한 단위이기 때문에 순차적으로 실행됨
@@ -68,7 +68,7 @@ Synchronous(동기) VS Asynchronous(비동기)
 일을 시작시키고 작업이 끝날 때까지 기다리지 않음
 
 ```swift
-DispatchQueue.global().async
+DispatchQueue.global().async { }
 ```
 
 원래의 작업이 진행되고 있던 곳(메인 스레드)에서  
@@ -79,7 +79,7 @@ DispatchQueue.global().async
 일을 시작시키고, 뿐만 아니라 작업이 끝날 때까지 기다림
 
 ```swift
-DispatchQueue.global().sync
+DispatchQueue.global().sync { }
 ```
 
 동기적으로 큐에 보내는 코드를 짜도 실질적으로는 메인스레드에서 일함
@@ -107,5 +107,90 @@ Serial(직렬) VS Concurrent(동시)
 ### Concurrent Queue
 
 (보통 메인에서) 분산처리 시킨 작업을 다른 여러 개의 스레드에서 처리하는 큐
+
 몇개의 스레드로 분산할지는 시스템이 결정  
-각자 독립적이지만 유사한 여러개의 작업을 처리할 때 사용
+각자 독립적이지만 유사한 여러개의 작업을 처리할 때 사용  
+ex. 테이블 뷰 셀에 이미지를 불러오기
+
+## 2-1강
+
+GCD(Dispatch Queue)의 종류와 특성
+
+### Dispatch Queue
+
+메인, 글로벌, 프라이빗(커스텀) 세 가지의 큐로 나뉨
+
+### 메인 큐:
+
+```swift
+DispatchQueue.main.sync { }
+```
+
+메인 스레드 == 메인 큐  
+유일함, 직렬 큐
+
+```swift
+//  2초 뒤에 메인스레드로 작업을 비동기적으로 보냄
+DispatchQueue.main.asyncAfter( .now( ) + 2 ) { }
+```
+
+### 글로벌 큐:
+
+```swift
+DispatchQueue.global().async { }
+```
+
+기본 설정은 Concurrent  
+Qos에 따라 6가지 종류로 나뉨
+
+### Qos(Quality of Service)
+
+작업의 우선 순위를 나타내는 시스템
+
+실행되는 작업이 어떤 종류인지에 따라 시스템이 어떻게 리소스를 할당할지를 결정  
+iOS가 우선 순위 인지해 우선도가 높은 작업에 더 많은 스레드를 배치,  
+배터리를 집중적으로 사용함
+
+아래는 글로벌 큐의 종류
+
+#### global(qos: .userInteractive):
+
+소요 시간: 거의 즉시  
+유저와 직접적 인터렉티브: UI업데이트, 애니메이션, UI반응관련 어떤 것이든 (사용자와 상호 작용)
+
+#### global(qos: .userInitiated):
+
+소요 시간: 몇 초  
+유저가 즉시 필요하긴 하지만, 비동기적으로 처리된 작업 (ex. 앱내에서 pdf파일을 여는 것과 같은)
+
+#### global():
+
+일반적인 작업
+
+#### global(qos: .utility):
+
+소요 시간: 몇 초에서 몇 분  
+보통 Progress Indicator와 함께 길게 실행되는 작업, 계산, IO, Networking, 지속적인 데이터 feeds
+
+#### global(qos: .background):
+
+소요 시간: 몇 분 이상  
+속도보다 에너지 효율 중시  
+유저가 직접적으로 인지하지 않고(시간이 안 중요한) 작업, 데이터 미리가져오기, 데이터베이스 유지
+
+#### global(qos: .unspecified):
+
+legacy API
+
+### 프라이빗(커스텀) 큐
+
+기본은 serial queue (concurrnet 설정 가능)
+qos OS가 추론(설정도 가능
+
+```swift
+// label에 String 저장해서 사용
+// 프라이빗 글로벌 큐
+let queue = DispatchQueue(label:"serial")
+let queue2 = DispatchQueue(label:"concurrent", attributes: .concurrent)
+queue.async { }
+```

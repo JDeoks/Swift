@@ -58,3 +58,54 @@ queue.async {}
 ```
 
 클로저 안의 코드들은 작업의 한 단위이기 때문에 순차적으로 실행됨
+
+## 0-3강
+
+Synchronous(동기) VS Asynchronous(비동기)
+
+### 비동기
+
+일을 시작시키고 작업이 끝날 때까지 기다리지 않음
+
+```swift
+DispatchQueue.global().async
+```
+
+원래의 작업이 진행되고 있던 곳(메인 스레드)에서  
+디스패치 글로벌 큐로 보낸 작업을 기다리지 않음
+
+### 동기
+
+일을 시작시키고, 뿐만 아니라 작업이 끝날 때까지 기다림
+
+```swift
+DispatchQueue.global().sync
+```
+
+동기적으로 큐에 보내는 코드를 짜도 실질적으로는 메인스레드에서 일함
+
+비동기 개념이 필요한 이유는 대부분 네트워크 작업 때문  
+네트워크와 관련된 작업들은 내부적으로 비동기적으로 구현됨
+
+```swift
+URLSession(configuration: .ephemeral).dataTask(with: url) {
+    data, response, error in self.image = UIImage(data: data!)
+}
+```
+
+URLSession도 내부적으로 알아서 비동기 작업 수행
+
+## 0-4강
+
+Serial(직렬) VS Concurrent(동시)
+
+### Serial Queue
+
+(보통 메인에서) 분산처리 시킨 작업을 단 하나의 다른 스레드에서 처리하는 큐  
+하나의 스레드로만 보내기 때문에 순서가 중요한 작업을 처리할 때 사용
+
+### Concurrent Queue
+
+(보통 메인에서) 분산처리 시킨 작업을 다른 여러 개의 스레드에서 처리하는 큐
+몇개의 스레드로 분산할지는 시스템이 결정  
+각자 독립적이지만 유사한 여러개의 작업을 처리할 때 사용

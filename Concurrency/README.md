@@ -255,6 +255,15 @@ DispatchQueue.global( ).async {
 4. 에러처리에 대한 내용
 
 ```swift
+// 오랜시간이 걸리는 동기적으로 처리하는 함수(동기 함수)
+public func tiltShift(image: UIImage?) -> UIImage? {
+    guard let image = image else { return nil }
+    sleep(1)
+    let mask = topAndBottomGradient(size: image.size)
+    return image.applyBlur(radius: 6, maskImage: mask)
+}
+
+// tiltShift 비동기 버전
 func asyncTiltShift(_ inputImage: UIImage?, runQueue: DispatchQueue, completionQueue: DispatchQueue, completion: @escaping (UIImage?, Error?) -> ()) {
     // 메인 작업 실행할 큐
     runQueue.async {

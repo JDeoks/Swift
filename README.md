@@ -49,7 +49,7 @@ dequeueReusableCell
 [문자열 검색](https://beepeach.tistory.com/189)  
 테이블 뷰 리로드
 
-#### [키보드에 가려지는 텍스트 필드 이동](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md)
+#### [키보드에 가려지는 텍스트 필드 이동](https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md) + 애니메이션
 
 - SnapKit
 - [keyboardAnimationCurveUserInfoKey](https://developer.apple.com/documentation/uikit/uiresponder/1621613-keyboardanimationcurveuserinfoke)

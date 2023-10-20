@@ -290,3 +290,7 @@ asyncTiltShift(image, runQueue: workingQueue, completionQueue: resultQueue) { im
 }
 print("==== 비동기함수의 작업 끝 ====")
 ```
+
+# 4-1강
+
+디스패치 그룹의 개념

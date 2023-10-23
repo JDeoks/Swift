@@ -294,3 +294,44 @@ print("==== 비동기함수의 작업 끝 ====")
 # 4-1강
 
 디스패치 그룹의 개념
+
+### Dispatch Group
+
+디스패치큐에 작업을 보내면 운영체제가 스레드를 적절히 생성해서 작업을 분배해줌  
+이 때, 분배된 작업뭉치의 끝나는 시점을 알 때 사용함  
+특정 그룹의 모든 작업완료 시점을 파악하는 것
+ex) 화면을 리소스의 다운이 끝난 다음에 띄우고 싶을 때
+
+```swift
+// 그룹 생성하기
+let group1 = DispatchGroup()
+// group 파라미터로 어떤 그룹에 넣을지 설정
+DispatchQueue.global(qos: ).async(group: group1) { }
+// 보내는 작업은 동일한 큐가 아니어도 됨
+DispatchQueue.global( ).async(group: group1) { }
+```
+
+#### notify(queue:work:)
+
+현재 그룹의 모든 작업 실행이 완료되면 큐에 work블록을 전송
+
+```swift
+// 그룹으로 묶인 모든 작업이 끝나는 시점에 클로저 안의 내용이 메인큐에 보내짐
+group1.notify(queue: DispatchQueue.main) { [weak self] in
+    self?.textLabel.text = “모든 작업이 완료되었습니다.”
+}
+```
+
+#### wait(timeout:)
+
+모든 작업이 완료 될 때까지 현재 대기열을 차단하는 동기적 방법  
+그룹작업이 다 끝나야만 다음 작업을 할 수 있는 상황에서 사용
+
+```swift
+// 작업이 끝날때까지 동기적으로 대기
+group1.wait(timeout: DispatchTime.distantFuture)
+// 60초까지 대기 후 다음 작업 실행
+if group1.wait(timeout: .now() + 60) == .timedOut {
+    print("모든 작업이 60초 안에 끝나진 않았습니다.")
+}
+```

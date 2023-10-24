@@ -291,7 +291,7 @@ asyncTiltShift(image, runQueue: workingQueue, completionQueue: resultQueue) { im
 print("==== 비동기함수의 작업 끝 ====")
 ```
 
-# 4-1강
+## 4-1강
 
 디스패치 그룹의 개념
 
@@ -329,9 +329,69 @@ group1.notify(queue: DispatchQueue.main) { [weak self] in
 
 ```swift
 // 작업이 끝날때까지 동기적으로 대기
-group1.wait(timeout: DispatchTime.distantFuture)
+group1.wait(timeout: DispatchTime.distantFuture) { }
 // 60초까지 대기 후 다음 작업 실행
 if group1.wait(timeout: .now() + 60) == .timedOut {
     print("모든 작업이 60초 안에 끝나진 않았습니다.")
+}
+```
+
+## 4-2 강
+
+디스패치 그룹의 사용
+
+### 디스패치 그룹으로 큐에 전송할 때 비동기 함수를 포함하면 생기는 문제
+
+그룹의 내부에 비동기 함수가 포함되면 그룹 외부에서 작업을 실행하게 되는데,  
+그로 인해 그룹이 끝날 시점을 알기 어려워짐  
+따라서 들어감과 나감의 수를 세어 그룹의 작업이 끝났는지 확인함
+
+```swift
+let workingQueue = DispatchQueue(label: "com.inflearn.concurrent", attributes: .concurrent)
+let defaultQueue = DispatchQueue.global()
+
+let numberArray = [(0,1), (2,3), (4,5), (6,7), (8,9), (10,11)]
+
+func asyncAdd(_ input: (Int, Int), runQueue: DispatchQueue, completionQueue: DispatchQueue,
+              completion: @escaping (Int, Error?) -> ()) {
+    runQueue.async {
+        var error: Error?
+        error = .none
+
+        let result = slowAdd(input)
+        completionQueue.async {
+            completion(result, error)
+        }
+    }
+}
+
+// 비동기 디스패치 그룹함수 만들기
+// 위와 거의 동일하지만, "디스패치 그룹" 아규먼트 추가적으로 더하기
+
+func asyncAdd_Group(_ input: (Int, Int), runQueue: DispatchQueue, completionQueue: DispatchQueue, group: DispatchGroup, completion: @escaping (Int, Error?) -> ()) {
+
+    group.enter()
+    asyncAdd(input, runQueue: runQueue, completionQueue: completionQueue) { result, error in
+        completion(result, error)
+        group.leave()     // 컴플리션 핸들러에서 "퇴장"시점 알기
+
+    }
+}
+
+// 디스패치 그룹 생성
+let wrappedGroup = DispatchGroup()
+
+// 반복문으로 비동기 그룹함수 활용하기
+for pair in numberArray {
+    asyncAdd_Group(pair, runQueue: workingQueue, completionQueue: defaultQueue, group: wrappedGroup) {
+        result, error in
+        print("결과값 출력 = \(result)")
+    }
+}
+
+// 모든 비동기 작업이 끝남을 알림받기
+wrappedGroup.notify(queue: defaultQueue) {
+    print("====모든 작업이 완료 되었습니다.====")
+    PlaygroundPage.current.finishExecution()
 }
 ```

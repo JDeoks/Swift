@@ -54,6 +54,7 @@ dequeueReusableCell
 - SnapKit
 - [keyboardAnimationCurveUserInfoKey](https://developer.apple.com/documentation/uikit/uiresponder/1621613-keyboardanimationcurveuserinfoke)
 - UIView.animate(withDuration:delay:options:animations:completion:)
+- [RxKeyboard 사용](https://velog.io/@dlskawns96/RxSwift-%ED%82%A4%EB%B3%B4%EB%93%9C%EA%B0%80-%EB%8B%A4%EB%A5%B8-View%EB%A5%BC-%EA%B0%80%EB%A6%AC%EB%8A%94-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0)
 
 ## Concurrency
 

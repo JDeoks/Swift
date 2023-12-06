@@ -15,6 +15,10 @@
 		2A08FF182B1F0ACF00020A81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A08FF162B1F0ACF00020A81 /* LaunchScreen.storyboard */; };
 		2A08FF572B1F10B200020A81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A08FF562B1F10B200020A81 /* GoogleService-Info.plist */; };
 		2A08FF5A2B1F117000020A81 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2A08FF592B1F117000020A81 /* SnapKit */; };
+		2A0F4A292B20668700AE7DC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F4A282B20668700AE7DC3 /* LoginViewController.swift */; };
+		2A0F4A542B206B2100AE7DC3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0F4A532B206B2100AE7DC3 /* RxCocoa */; };
+		2A0F4A562B206B2100AE7DC3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0F4A552B206B2100AE7DC3 /* RxSwift */; };
+		2A0F4A582B209A4000AE7DC3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */; };
 		2A46C03D2B1F47E800412238 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */; };
 		2AC95FA72B202656004ECB74 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FA62B202656004ECB74 /* FirebaseAnalytics */; };
 		2AC95FA92B202656004ECB74 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FA82B202656004ECB74 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -46,6 +50,19 @@
 		2AC95FDD2B203AA3004ECB74 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2A0F4A4D2B206AEE00AE7DC3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2A08FF082B1F0ACD00020A81 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A08FF0B2B1F0ACD00020A81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +73,8 @@
 		2A08FF172B1F0ACF00020A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A08FF192B1F0ACF00020A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A08FF562B1F10B200020A81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A0F4A282B20668700AE7DC3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +94,9 @@
 				2AC95FAB2B202656004ECB74 /* FirebaseAnalyticsSwift in Frameworks */,
 				2AC95FCF2B202656004ECB74 /* FirebaseMLModelDownloader in Frameworks */,
 				2AC95FAD2B202656004ECB74 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				2A0F4A542B206B2100AE7DC3 /* RxCocoa in Frameworks */,
 				2AC95FA72B202656004ECB74 /* FirebaseAnalytics in Frameworks */,
+				2A0F4A562B206B2100AE7DC3 /* RxSwift in Frameworks */,
 				2AC95FC32B202656004ECB74 /* FirebaseFirestoreSwift in Frameworks */,
 				2AC95FA92B202656004ECB74 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				2AC95FAF2B202656004ECB74 /* FirebaseAppCheck in Frameworks */,
@@ -120,9 +141,9 @@
 			children = (
 				2A08FF0B2B1F0ACD00020A81 /* AppDelegate.swift */,
 				2A08FF0D2B1F0ACD00020A81 /* SceneDelegate.swift */,
-				2A08FF0F2B1F0ACD00020A81 /* ViewController.swift */,
-				2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */,
 				2A08FF112B1F0ACD00020A81 /* Main.storyboard */,
+				2AC95FE12B2061F6004ECB74 /* ViewControllers */,
+				2AC95FE22B206204004ECB74 /* Extensions */,
 				2A08FF142B1F0ACF00020A81 /* Assets.xcassets */,
 				2A08FF162B1F0ACF00020A81 /* LaunchScreen.storyboard */,
 				2A08FF192B1F0ACF00020A81 /* Info.plist */,
@@ -130,6 +151,24 @@
 				2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		2AC95FE12B2061F6004ECB74 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A08FF0F2B1F0ACD00020A81 /* ViewController.swift */,
+				2A0F4A282B20668700AE7DC3 /* LoginViewController.swift */,
+				2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2AC95FE22B206204004ECB74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +181,7 @@
 				2A08FF042B1F0ACD00020A81 /* Sources */,
 				2A08FF052B1F0ACD00020A81 /* Frameworks */,
 				2A08FF062B1F0ACD00020A81 /* Resources */,
+				2A0F4A4D2B206AEE00AE7DC3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +217,8 @@
 				2AC95FD62B202656004ECB74 /* FirebaseRemoteConfigSwift */,
 				2AC95FD82B202656004ECB74 /* FirebaseStorage */,
 				2AC95FDA2B202656004ECB74 /* FirebaseStorageCombine-Community */,
+				2A0F4A532B206B2100AE7DC3 /* RxCocoa */,
+				2A0F4A552B206B2100AE7DC3 /* RxSwift */,
 			);
 			productName = Chat;
 			productReference = 2A08FF082B1F0ACD00020A81 /* Chat.app */;
@@ -209,6 +251,7 @@
 			packageReferences = (
 				2A08FF582B1F117000020A81 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2AC95FA52B202656004ECB74 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2A0F4A522B206B2100AE7DC3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 2A08FF092B1F0ACD00020A81 /* Products */;
 			projectDirPath = "";
@@ -239,9 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0F4A582B209A4000AE7DC3 /* SignUpViewController.swift in Sources */,
 				2A08FF102B1F0ACD00020A81 /* ViewController.swift in Sources */,
 				2A46C03D2B1F47E800412238 /* UIColor+Ex.swift in Sources */,
 				2A08FF0C2B1F0ACD00020A81 /* AppDelegate.swift in Sources */,
+				2A0F4A292B20668700AE7DC3 /* LoginViewController.swift in Sources */,
 				2A08FF0E2B1F0ACD00020A81 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +520,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		2A0F4A522B206B2100AE7DC3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
 		2AC95FA52B202656004ECB74 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -490,6 +543,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A08FF582B1F117000020A81 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		2A0F4A532B206B2100AE7DC3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A0F4A522B206B2100AE7DC3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2A0F4A552B206B2100AE7DC3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A0F4A522B206B2100AE7DC3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		2AC95FA62B202656004ECB74 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -64,13 +64,22 @@ class ViewController: UIViewController {
         let color = remoteConfig["splash_background"].stringValue
         let caps = remoteConfig["splash_message_caps"].boolValue
         let message = remoteConfig["splash_message"].stringValue
+        
+        ///  앱 실행 가능하게 or 공지 나오게 할지 결정
         if caps {
+            // 업데이트 필요 alert
             let alert = UIAlertController(title: "공지사항", message: message, preferredStyle: .alert)
             let okey = UIAlertAction(title: "확인", style: .default) { action in
                 exit(0)
             }
             alert.addAction(okey)
             present(alert, animated: true)
+        }
+        else {
+            // 정상 앱 실행
+            let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
+            loginVC.modalPresentationStyle = .overFullScreen
+            present(loginVC, animated: false)
         }
         self.view.backgroundColor = UIColor(hex: color! )
     }

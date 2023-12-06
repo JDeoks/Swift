@@ -58,8 +58,10 @@ class InChatViewController: UIViewController {
         guard let keyboardAnimationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
             return
         }
+        print("지속시간", keyboardAnimationDuration)
         // 키보드 애니메이션 커브 저장
         let animationCurveRawValue: Int = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int ?? 0
+        print("커브", animationCurveRawValue)
         let animationCurve: UIView.AnimationCurve = UIView.AnimationCurve(rawValue: animationCurveRawValue) ?? .easeInOut
         
         // messageTextStack 애니메이션 속성 설정

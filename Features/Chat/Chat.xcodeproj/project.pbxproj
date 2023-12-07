@@ -48,6 +48,7 @@
 		2AC95FD92B202656004ECB74 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FD82B202656004ECB74 /* FirebaseStorage */; };
 		2AC95FDB2B202656004ECB74 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FDA2B202656004ECB74 /* FirebaseStorageCombine-Community */; };
 		2AC95FDD2B203AA3004ECB74 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */; };
+		2AD87CAC2B2126A900850103 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD87CAB2B2126A900850103 /* RxGesture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +91,7 @@
 				2AC95FD12B202656004ECB74 /* FirebaseMessaging in Frameworks */,
 				2AC95FB12B202656004ECB74 /* FirebaseAppDistribution-Beta in Frameworks */,
 				2AC95FB52B202656004ECB74 /* FirebaseAuthCombine-Community in Frameworks */,
+				2AD87CAC2B2126A900850103 /* RxGesture in Frameworks */,
 				2AC95FC12B202656004ECB74 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				2AC95FAB2B202656004ECB74 /* FirebaseAnalyticsSwift in Frameworks */,
 				2AC95FCF2B202656004ECB74 /* FirebaseMLModelDownloader in Frameworks */,
@@ -219,6 +221,7 @@
 				2AC95FDA2B202656004ECB74 /* FirebaseStorageCombine-Community */,
 				2A0F4A532B206B2100AE7DC3 /* RxCocoa */,
 				2A0F4A552B206B2100AE7DC3 /* RxSwift */,
+				2AD87CAB2B2126A900850103 /* RxGesture */,
 			);
 			productName = Chat;
 			productReference = 2A08FF082B1F0ACD00020A81 /* Chat.app */;
@@ -252,6 +255,7 @@
 				2A08FF582B1F117000020A81 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2AC95FA52B202656004ECB74 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2A0F4A522B206B2100AE7DC3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				2AD87CAA2B2126A900850103 /* XCRemoteSwiftPackageReference "RxGesture" */,
 			);
 			productRefGroup = 2A08FF092B1F0ACD00020A81 /* Products */;
 			projectDirPath = "";
@@ -536,6 +540,14 @@
 				minimumVersion = 10.19.0;
 			};
 		};
+		2AD87CAA2B2126A900850103 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -688,6 +700,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AC95FA52B202656004ECB74 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		2AD87CAB2B2126A900850103 /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AD87CAA2B2126A900850103 /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

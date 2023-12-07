@@ -126,10 +126,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="pwc-4L-M9s">
-                                <rect key="frame" x="24" y="179.00000000000003" width="345" height="266.66666666666674"/>
+                                <rect key="frame" x="24" y="99.000000000000028" width="345" height="432.66666666666674"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o3A-r0-7ju">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1qq-kO-5Ze">
+                                                <rect key="frame" x="122.66666666666666" y="1.6666666666666643" width="102.66666666666666" height="99.666666666666686"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="G1Q-9Y-IiF"/>
+                                                    <constraint firstAttribute="height" constant="100" id="k0K-WF-Z3l"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-xI-OCG">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
+                                        <rect key="frame" x="0.0" y="166" width="345" height="128"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ipu-q3-wFm">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
@@ -182,7 +194,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3FZ-bm-uaO">
-                                        <rect key="frame" x="0.0" y="194" width="345" height="72.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="360" width="345" height="72.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbV-O4-lOx">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="34.333333333333336"/>
@@ -204,12 +216,13 @@
                         <constraints>
                             <constraint firstItem="pwc-4L-M9s" firstAttribute="leading" secondItem="9yu-Ym-oiq" secondAttribute="leading" constant="24" id="E86-jd-gjw"/>
                             <constraint firstItem="9yu-Ym-oiq" firstAttribute="trailing" secondItem="pwc-4L-M9s" secondAttribute="trailing" constant="24" id="UVB-r7-67q"/>
-                            <constraint firstItem="pwc-4L-M9s" firstAttribute="top" secondItem="9yu-Ym-oiq" secondAttribute="top" constant="120" id="yG4-PM-Cof"/>
+                            <constraint firstItem="pwc-4L-M9s" firstAttribute="top" secondItem="9yu-Ym-oiq" secondAttribute="top" constant="40" id="hIt-c8-nqd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cancleButton" destination="q9K-kA-fWr" id="BSg-a2-HwQ"/>
                         <outlet property="emailTextField" destination="Ipu-q3-wFm" id="uFH-8D-3np"/>
+                        <outlet property="imageSelectButtonImageView" destination="1qq-kO-5Ze" id="sml-Bb-hIC"/>
                         <outlet property="nameTextField" destination="9Lz-8U-h4F" id="cY4-Wb-0rZ"/>
                         <outlet property="passwordTextView" destination="Kla-hZ-XOe" id="9R3-dY-20W"/>
                         <outlet property="signUpButton" destination="fbV-O4-lOx" id="2HO-eV-G2W"/>
@@ -222,6 +235,7 @@
     </scenes>
     <resources>
         <image name="firebase_28dp" width="56" height="56"/>
+        <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

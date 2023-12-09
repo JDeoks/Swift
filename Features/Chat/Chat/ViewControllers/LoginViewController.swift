@@ -44,8 +44,8 @@ class LoginViewController: UIViewController {
     
     func bind() {
         Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                let mainVC = self.storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
+            if user != nil {
+                let mainVC = self.storyboard?.instantiateViewController(identifier: "MainTabBarController") as! UITabBarController
                 mainVC.modalPresentationStyle = .overFullScreen
                 self.present(mainVC, animated: true)
             }

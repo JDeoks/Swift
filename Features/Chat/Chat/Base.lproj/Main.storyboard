@@ -117,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="932" y="5"/>
         </scene>
-        <!--Main View Controller-->
+        <!--친구-->
         <scene sceneID="nUw-sO-a1K">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QAj-w0-sxD" customClass="MainViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,10 +127,43 @@
                         <viewLayoutGuide key="safeArea" id="p9s-un-Mwh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="친구" image="person.2.fill" catalog="system" selectedImage="person.2.fill" id="DiA-Gk-3IL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxo-MQ-aCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="16"/>
+            <point key="canvasLocation" x="3228.2442748091603" y="4.9295774647887329"/>
+        </scene>
+        <!--채팅-->
+        <scene sceneID="gBh-nu-luN">
+            <objects>
+                <viewController id="co8-fx-4PZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v2z-rC-yOx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wRc-Yr-ttW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="채팅" image="bubble.left.fill" catalog="system" selectedImage="bubble.left.fill" id="t4h-wJ-xRn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mu6-ze-HrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3226" y="705"/>
+        </scene>
+        <!--내 계정-->
+        <scene sceneID="5ps-3c-eMR">
+            <objects>
+                <viewController id="gNI-df-EH1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qoo-Wy-C4X">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1ML-LV-eIb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="내 계정" image="person.circle.fill" catalog="system" selectedImage="person.circle.fill" id="fiY-nd-bTK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbI-Vx-QUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3223" y="1389"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ODj-v2-jif">
@@ -247,9 +280,31 @@
             </objects>
             <point key="canvasLocation" x="931" y="696"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5Ue-n1-Td0">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gPT-vv-QEt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d7f-i6-CVW">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QAj-w0-sxD" kind="relationship" relationship="viewControllers" id="PVc-oq-aDh"/>
+                        <segue destination="co8-fx-4PZ" kind="relationship" relationship="viewControllers" id="daM-7Q-Upm"/>
+                        <segue destination="gNI-df-EH1" kind="relationship" relationship="viewControllers" id="GEN-Mt-dfh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OO6-lY-H2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2301.5267175572517" y="4.9295774647887329"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bubble.left.fill" catalog="system" width="128" height="110"/>
         <image name="firebase_28dp" width="56" height="56"/>
+        <image name="person.2.fill" catalog="system" width="128" height="86"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

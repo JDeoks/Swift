@@ -49,6 +49,7 @@
 		2AC95FDB2B202656004ECB74 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FDA2B202656004ECB74 /* FirebaseStorageCombine-Community */; };
 		2AC95FDD2B203AA3004ECB74 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */; };
 		2AD87CAC2B2126A900850103 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD87CAB2B2126A900850103 /* RxGesture */; };
+		2AD87CAE2B22805A00850103 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD87CAD2B22805A00850103 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +79,7 @@
 		2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		2AD87CAD2B22805A00850103 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				2A08FF0F2B1F0ACD00020A81 /* ViewController.swift */,
 				2A0F4A282B20668700AE7DC3 /* LoginViewController.swift */,
 				2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */,
+				2AD87CAD2B22805A00850103 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD87CAE2B22805A00850103 /* MainViewController.swift in Sources */,
 				2A0F4A582B209A4000AE7DC3 /* SignUpViewController.swift in Sources */,
 				2A08FF102B1F0ACD00020A81 /* ViewController.swift in Sources */,
 				2A46C03D2B1F47E800412238 /* UIColor+Ex.swift in Sources */,

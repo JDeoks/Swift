@@ -48,8 +48,13 @@
 		2AC95FD92B202656004ECB74 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FD82B202656004ECB74 /* FirebaseStorage */; };
 		2AC95FDB2B202656004ECB74 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC95FDA2B202656004ECB74 /* FirebaseStorageCombine-Community */; };
 		2AC95FDD2B203AA3004ECB74 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */; };
+		2AD3288B2B273017002DA60F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD3288A2B273017002DA60F /* Kingfisher */; };
+		2AD3288E2B2737EC002DA60F /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD3288D2B2737EC002DA60F /* SwiftDate */; };
 		2AD87CAC2B2126A900850103 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD87CAB2B2126A900850103 /* RxGesture */; };
-		2AD87CAE2B22805A00850103 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD87CAD2B22805A00850103 /* MainViewController.swift */; };
+		2AD87CAE2B22805A00850103 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD87CAD2B22805A00850103 /* UsersViewController.swift */; };
+		2AD87CB22B24020E00850103 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD87CB02B24020E00850103 /* UsersTableViewCell.swift */; };
+		2AD87CB32B24020E00850103 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD87CB12B24020E00850103 /* UsersTableViewCell.xib */; };
+		2AD87CB62B256D9300850103 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD87CB52B256D9300850103 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +84,10 @@
 		2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		2AC95FDC2B203AA3004ECB74 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
-		2AD87CAD2B22805A00850103 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2AD87CAD2B22805A00850103 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		2AD87CB02B24020E00850103 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		2AD87CB12B24020E00850103 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
+		2AD87CB52B256D9300850103 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 				2AC95FD32B202656004ECB74 /* FirebasePerformance in Frameworks */,
 				2AC95FC92B202656004ECB74 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				2AC95FC72B202656004ECB74 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				2AD3288B2B273017002DA60F /* Kingfisher in Frameworks */,
 				2AC95FB72B202656004ECB74 /* FirebaseCrashlytics in Frameworks */,
 				2AC95FCD2B202656004ECB74 /* FirebaseInstallations in Frameworks */,
 				2AC95FD52B202656004ECB74 /* FirebaseRemoteConfig in Frameworks */,
@@ -115,6 +124,7 @@
 				2AC95FDB2B202656004ECB74 /* FirebaseStorageCombine-Community in Frameworks */,
 				2A08FF5A2B1F117000020A81 /* SnapKit in Frameworks */,
 				2AC95FB32B202656004ECB74 /* FirebaseAuth in Frameworks */,
+				2AD3288E2B2737EC002DA60F /* SwiftDate in Frameworks */,
 				2AC95FBD2B202656004ECB74 /* FirebaseDynamicLinks in Frameworks */,
 				2AC95FBF2B202656004ECB74 /* FirebaseFirestore in Frameworks */,
 				2AC95FD72B202656004ECB74 /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -147,7 +157,10 @@
 				2A08FF0D2B1F0ACD00020A81 /* SceneDelegate.swift */,
 				2A08FF112B1F0ACD00020A81 /* Main.storyboard */,
 				2AC95FE12B2061F6004ECB74 /* ViewControllers */,
+				2AD87CAF2B2401CF00850103 /* Views */,
+				2AD87CB42B256D6B00850103 /* Models */,
 				2AC95FE22B206204004ECB74 /* Extensions */,
+				2A6161012B2B4FD30093C688 /* Enums */,
 				2A08FF142B1F0ACF00020A81 /* Assets.xcassets */,
 				2A08FF162B1F0ACF00020A81 /* LaunchScreen.storyboard */,
 				2A08FF192B1F0ACF00020A81 /* Info.plist */,
@@ -157,13 +170,20 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		2A6161012B2B4FD30093C688 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		2AC95FE12B2061F6004ECB74 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				2A08FF0F2B1F0ACD00020A81 /* ViewController.swift */,
 				2A0F4A282B20668700AE7DC3 /* LoginViewController.swift */,
 				2A0F4A572B209A4000AE7DC3 /* SignUpViewController.swift */,
-				2AD87CAD2B22805A00850103 /* MainViewController.swift */,
+				2AD87CAD2B22805A00850103 /* UsersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +194,23 @@
 				2A46C03C2B1F47E800412238 /* UIColor+Ex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2AD87CAF2B2401CF00850103 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AD87CB02B24020E00850103 /* UsersTableViewCell.swift */,
+				2AD87CB12B24020E00850103 /* UsersTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AD87CB42B256D6B00850103 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AD87CB52B256D9300850103 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +262,8 @@
 				2A0F4A532B206B2100AE7DC3 /* RxCocoa */,
 				2A0F4A552B206B2100AE7DC3 /* RxSwift */,
 				2AD87CAB2B2126A900850103 /* RxGesture */,
+				2AD3288A2B273017002DA60F /* Kingfisher */,
+				2AD3288D2B2737EC002DA60F /* SwiftDate */,
 			);
 			productName = Chat;
 			productReference = 2A08FF082B1F0ACD00020A81 /* Chat.app */;
@@ -259,6 +298,8 @@
 				2AC95FA52B202656004ECB74 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2A0F4A522B206B2100AE7DC3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				2AD87CAA2B2126A900850103 /* XCRemoteSwiftPackageReference "RxGesture" */,
+				2AD328892B273017002DA60F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2AD3288C2B2737EC002DA60F /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 2A08FF092B1F0ACD00020A81 /* Products */;
 			projectDirPath = "";
@@ -276,6 +317,7 @@
 			files = (
 				2A08FF182B1F0ACF00020A81 /* LaunchScreen.storyboard in Resources */,
 				2AC95FDD2B203AA3004ECB74 /* RemoteConfigDefaults.plist in Resources */,
+				2AD87CB32B24020E00850103 /* UsersTableViewCell.xib in Resources */,
 				2A08FF572B1F10B200020A81 /* GoogleService-Info.plist in Resources */,
 				2A08FF152B1F0ACF00020A81 /* Assets.xcassets in Resources */,
 				2A08FF132B1F0ACD00020A81 /* Main.storyboard in Resources */,
@@ -289,12 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD87CAE2B22805A00850103 /* MainViewController.swift in Sources */,
+				2AD87CB22B24020E00850103 /* UsersTableViewCell.swift in Sources */,
+				2AD87CAE2B22805A00850103 /* UsersViewController.swift in Sources */,
 				2A0F4A582B209A4000AE7DC3 /* SignUpViewController.swift in Sources */,
 				2A08FF102B1F0ACD00020A81 /* ViewController.swift in Sources */,
 				2A46C03D2B1F47E800412238 /* UIColor+Ex.swift in Sources */,
 				2A08FF0C2B1F0ACD00020A81 /* AppDelegate.swift in Sources */,
 				2A0F4A292B20668700AE7DC3 /* LoginViewController.swift in Sources */,
+				2AD87CB62B256D9300850103 /* UserModel.swift in Sources */,
 				2A08FF0E2B1F0ACD00020A81 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +588,22 @@
 				minimumVersion = 10.19.0;
 			};
 		};
+		2AD328892B273017002DA60F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.1;
+			};
+		};
+		2AD3288C2B2737EC002DA60F /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		2AD87CAA2B2126A900850103 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
@@ -704,6 +764,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AC95FA52B202656004ECB74 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		2AD3288A2B273017002DA60F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AD328892B273017002DA60F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		2AD3288D2B2737EC002DA60F /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AD3288C2B2737EC002DA60F /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 		2AD87CAB2B2126A900850103 /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;

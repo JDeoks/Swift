@@ -21,9 +21,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        try! Auth.auth().signOut()
         action()
         bind()
+//        try? Auth.auth().signOut()
     }
     
     func action() {
@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
                 let mainVC = self.storyboard?.instantiateViewController(identifier: "MainTabBarController") as! UITabBarController
                 mainVC.modalPresentationStyle = .overFullScreen
                 self.present(mainVC, animated: true)
+                print(user)
             }
         }
     }

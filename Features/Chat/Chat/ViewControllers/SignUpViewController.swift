@@ -36,6 +36,7 @@ class SignUpViewController: UIViewController {
         action()
         bind()
     }
+    
     func initUI() {
 
     }
@@ -84,13 +85,14 @@ class SignUpViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let authResult = authResult {
                 print("registerUser 성공")
+                print("인증 프로바이더 아이디",authResult.user.providerID)
                 self.addUserInfoToDB(id: authResult.user.uid, userName: userName)
             }
             if let error = error {
                 print("SignUp Error: \(error.localizedDescription)")
                 return
             }
-            guard let authResult = authResult else {
+            guard authResult != nil else {
                 print("signUp 오류")
                 return
             }
@@ -99,15 +101,15 @@ class SignUpViewController: UIViewController {
         
     func addUserInfoToDB(id: String, userName: String) {
         print("addUserInfoToDB - id: \(id) userName: \(userName)")
-        guard let image = profileImage else {
+        guard profileImage != nil else {
             self.addUserToDB(id: id, userName: userName, imageURL: "")
             return
         }
         let imageData = profileImage.jpegData(compressionQuality: 0.2)!
         
         let uploadRef = storage.reference().child("userImages").child(id)
-        let uploadTask = uploadRef.putData(imageData, metadata: nil) { (metadata, error) in
-            if let error = error {
+        _ = uploadRef.putData(imageData, metadata: nil) { (metadata, error) in
+            if error != nil {
                 print("addProfileImageToDB 오류")
             }
         }

@@ -120,14 +120,52 @@
         <!--친구-->
         <scene sceneID="nUw-sO-a1K">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QAj-w0-sxD" customClass="MainViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QAj-w0-sxD" customClass="UsersViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P8o-gg-Jdg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="boH-3m-boN">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAj-Sz-YZQ">
+                                        <rect key="frame" x="23.999999999999996" y="0.0" width="48.666666666666657" height="56"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-fF-jiV">
+                                        <rect key="frame" x="101.66666666666666" y="0.0" width="267.33333333333337" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="u9x-dT-Rif"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="24"/>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uJr-eH-h7i">
+                                <rect key="frame" x="0.0" y="115" width="393" height="654"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="p9s-un-Mwh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="boH-3m-boN" firstAttribute="top" secondItem="p9s-un-Mwh" secondAttribute="top" id="3zQ-Zo-Vkk"/>
+                            <constraint firstItem="uJr-eH-h7i" firstAttribute="leading" secondItem="p9s-un-Mwh" secondAttribute="leading" id="AeQ-Cu-RFr"/>
+                            <constraint firstItem="p9s-un-Mwh" firstAttribute="leading" secondItem="boH-3m-boN" secondAttribute="leading" id="E3G-he-OO3"/>
+                            <constraint firstItem="p9s-un-Mwh" firstAttribute="bottom" secondItem="uJr-eH-h7i" secondAttribute="bottom" id="rVZ-aZ-NFb"/>
+                            <constraint firstItem="uJr-eH-h7i" firstAttribute="top" secondItem="boH-3m-boN" secondAttribute="bottom" id="tfD-Jh-pGz"/>
+                            <constraint firstItem="p9s-un-Mwh" firstAttribute="trailing" secondItem="boH-3m-boN" secondAttribute="trailing" id="tzZ-OB-1n4"/>
+                            <constraint firstItem="p9s-un-Mwh" firstAttribute="trailing" secondItem="uJr-eH-h7i" secondAttribute="trailing" id="zPv-U5-lxU"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="친구" image="person.2.fill" catalog="system" selectedImage="person.2.fill" id="DiA-Gk-3IL"/>
+                    <connections>
+                        <outlet property="usersTableView" destination="uJr-eH-h7i" id="pYh-Cb-Nxl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxo-MQ-aCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -286,6 +324,7 @@
                 <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gPT-vv-QEt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d7f-i6-CVW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

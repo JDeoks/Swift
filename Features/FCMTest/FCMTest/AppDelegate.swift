@@ -47,12 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    // 얍이 실행중일때 알림왔을 때  실행되는 코드
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         // TODO
     }
     
+    // 알림을 눌러서 들어갔을때 실행됨
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // TODO
+//        let userInfo = response.notification.request.content.userInfo
+//        let userInfoDic = userInfo as NSDictionary
+        
         completionHandler()
     }
 }

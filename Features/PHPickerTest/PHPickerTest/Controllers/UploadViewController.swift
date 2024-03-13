@@ -63,7 +63,6 @@ extension UploadViewController: PHPickerViewControllerDelegate {
         let picker = PHPickerViewController(configuration: configuration)
         self.addChild(picker)
         picker.view.frame = view.frame
-        // CGRect(x: 0, y: Int(self.view.frame.height / 2), width: Int(self.view.frame.width), height: Int(self.view.frame.height / 2))
         self.view.addSubview(picker.view)
         picker.didMove(toParent: self)
         picker.delegate = self
@@ -109,7 +108,6 @@ extension UploadViewController: PHPickerViewControllerDelegate {
 
 extension UploadViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return selectedResults.count
     }
     

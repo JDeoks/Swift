@@ -13,6 +13,7 @@ class PostsViewModel {
     var posts: [PostModel] = []
     
     let fetchPostsDone = PublishSubject<Bool>()
+    let serverError = PublishSubject<NetworkError>()
     
     func fetchPosts() {
         print("\(type(of: self)) - \(#function)")

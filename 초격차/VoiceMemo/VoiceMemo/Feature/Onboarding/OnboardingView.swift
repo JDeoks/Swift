@@ -6,12 +6,39 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    
+    // StateObject로 PathModel과 OnboardingViewModel을 선언.
+    @StateObject private var pathModel = PathModel()
     @StateObject private var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
-        // TODO: - 화면 전환 주석 필요
-        Text("Onboarding")
+        // NavigationStack을 사용하여 앱 내의 네비게이션 경로를 관리.
+        // pathModel.paths는 현재 네비게이션 경로를 바인딩하는 데 사용됨.
+        NavigationStack(path: $pathModel.paths) {
+            // OnboardingContentView를 루트뷰로 설정
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
+                .navigationDestination(for: PathType.self) { pathType in
+                    // pathType의 값에 따라 해당하는 뷰를 생성합니다.
+                    switch pathType {
+                    case .homeView:
+                        HomeView()
+                            .navigationBarBackButtonHidden()
+                        
+                    case .todoView:
+                        TodoView()
+                            .navigationBarBackButtonHidden()
+                        
+                    case .memoView:
+                        MemoView()
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+        }
+        // environmentObject를 사용하여 pathModel을 하위 뷰에 주입.
+        // 따라서 모든 하위 뷰에서 pathModel에 접근할 수 있음.
+        .environmentObject(pathModel)
+        .onAppear{
+            pathModel.paths.append(.memoView)
+        }
     }
 }
 
@@ -23,7 +50,6 @@ private struct OnboardingContentView: View {
     init(onboardingViewModel: OnboardingViewModel) {
         self.onboardingViewModel = onboardingViewModel
     }
-
     
     fileprivate var body: some View {
         VStack{
@@ -99,20 +125,21 @@ private struct OnboardingCellView: View {
 }
 
 fileprivate struct StartButtonView:  View {
+    // 변수 이름은 달라도 됨. 타입으로 environment objects타입을 찾아서 프로퍼티에 첨부
+    @EnvironmentObject private var pathModel: PathModel
+    
     fileprivate  var body: some View {
-        Button(
-            action: {
-            
-        }, 
-            label: {
-                HStack{
-                    Text("시작하기")
-                        .font(.system(size: 16))
-                        .foregroundStyle(Color.customGreen)
-                    Image("startHome")
-                        .renderingMode(.template)
-                        .foregroundStyle(Color.customGreen)
-                }
+        Button( action: {
+            pathModel.paths.append(.homeView)
+        }, label: {
+            HStack{
+                Text("시작하기")
+                    .font(.system(size: 16))
+                    .foregroundStyle(Color.customGreen)
+                Image("startHome")
+                    .renderingMode(.template)
+                    .foregroundStyle(Color.customGreen)
+            }
         })
         .padding(.bottom, 50)
     }
@@ -122,6 +149,18 @@ struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         //      OnboardingCellView(onboardingContent: .init(imageFileName: "onboarding_1", title: "제목", subTitle: "부제목"))
 //        OnboardingContentView(onboardingViewModel: OnboardingViewModel())
-        OnboardingContentView(onboardingViewModel: OnboardingViewModel())
+//        OnboardingContentView(onboardingViewModel: OnboardingViewModel())
+        OnboardingView()
+    }
+}
+
+extension UINavigationController: UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
     }
 }

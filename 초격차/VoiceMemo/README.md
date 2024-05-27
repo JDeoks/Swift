@@ -231,3 +231,103 @@ struct MyApp: App {
     }
 }
 ```
+
+## NavigationStack
+
+루트 뷰를 표시하고 루트 뷰 위에 추가 뷰를 표시할 수 있는 뷰
+
+뷰의 스택을 루트 뷰 위에 표시하기 위해 사용.
+
+NavigationLink를 클릭해서 스택에 뷰를 추가, 뒤로가기나 스와이프로 뷰를 제거
+
+가장 최근에 추가된 뷰를 표시하며, 루트뷰는 제거할 수 없음
+
+### NavigationLink 생성
+
+```swift
+NavigationStack {
+    List(parks) { park in
+        NavigationLink(park.name, value: park)
+    }
+    .navigationDestination(for: Park.self) { park in
+        ParkDetails(park: park)
+    }
+}
+```
+
+`navigationDestination(for:destination:)` 모디파이어로 뷰를 데이터 타입과 연결후,
+
+같은 타입의 데이터를 표시하는 `NavigationLink` 를 초기화 함
+
+`NavigationStack`안에는 루트뷰 하나만 들어감(List)
+
+### **네비게이션 상태 관리**
+
+스택을 데이터컬렉션에 바인딩해서 초기화 할 수 있음
+
+```swift
+@State private var presentedParks: [Park] = []
+NavigationStack(path: $presentedParks) {
+    List(parks) { park in
+        NavigationLink(park.name, value: park)
+    }
+    .navigationDestination(for: Park.self) { park in
+        ParkDetails(park: park)
+    }
+}
+```
+
+`NavigationLink` 클릭 시 Park모델을 배열에 추가, ParkDetails뷰 표시
+
+### 여러 뷰 한번에 푸시
+
+```swift
+func showParks() {
+    presentedParks = [Park("Yosemite"), Park("Sequoia")]
+}
+```
+
+딥 링크, 상태 복원 또는 프로그래밍 방식의 네비게이션 가능
+
+```swift
+struct OnboardingView: View {
+    // StateObject로 PathModel과 OnboardingViewModel을 선언.
+    @StateObject private var pathModel = PathModel()
+    @StateObject private var onboardingViewModel = OnboardingViewModel()
+
+    var body: some View {
+        // NavigationStack을 사용하여 앱 내의 네비게이션 경로를 관리.
+        // pathModel.paths는 현재 네비게이션 경로를 바인딩하는 데 사용됨.
+        NavigationStack(path: $pathModel.paths) {
+            // OnboardingContentView를 루트뷰로 설정
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
+                .navigationDestination(for: PathType.self) { pathType in
+                    // pathType의 값에 따라 해당하는 뷰를 생성합니다.
+                    switch pathType {
+                    case .homeView:
+                        HomeView()
+                            .navigationBarBackButtonHidden()
+
+                    case .todoView:
+                        TodoView()
+                            .navigationBarBackButtonHidden()
+
+                    case .memoView:
+                        MemoView()
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+        }
+        // environmentObject를 사용하여 pathModel을 하위 뷰에 주입.
+        // 따라서 모든 하위 뷰에서 pathModel에 접근할 수 있음.
+        .environmentObject(pathModel)
+        .onAppear{
+            pathModel.paths.append(.memoView)
+        }
+    }
+}
+```
+
+뷰를 pop할 때 하위뷰에서 pathModel 접근이 필요함.
+
+따라서 environmentObject로 넘겨줌

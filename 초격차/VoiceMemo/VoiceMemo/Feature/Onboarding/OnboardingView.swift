@@ -125,7 +125,7 @@ private struct OnboardingCellView: View {
 }
 
 fileprivate struct StartButtonView:  View {
-    // 변수 이름은 달라도 됨. 타입으로 environment objects타입을 찾아서 프로퍼티에 첨부
+    // EnvironmentObject를 쓸 때는 변수 이름은 달라도 됨. 타입으로 environment objects타입을 찾아서 프로퍼티에 첨부
     @EnvironmentObject private var pathModel: PathModel
     
     fileprivate  var body: some View {

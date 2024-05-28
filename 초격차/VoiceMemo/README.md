@@ -157,6 +157,32 @@ struct ContentView: View {
 }
 ```
 
+### init 함수 안에서 @State 초기화
+
+```swift
+struct MyView: View {
+    @State private var isRemoveSelected: Bool
+
+    init(isRemoveSelected: Bool = false) {
+		    // @State 초기화
+        _isRemoveSelected = State(initialValue: isRemoveSelected)
+    }
+
+    var body: some View {
+        VStack {
+            Text(isRemoveSelected ? "Selected" : "Not Selected")
+            Button(action: {
+                isRemoveSelected.toggle()
+            }) {
+                Text("Toggle Selection")
+            }
+        }
+    }
+}
+```
+
+변수 이름 앞에 \_추가해서 선언한 text가 프로퍼티 래퍼라는 것을 컴파일러에게 알림
+
 ## **@ObservedObject**
 
 외부에서 참조 전달된 객체의 상태를 관찰. 뷰는 객체의 소유권을 가지지 않음
@@ -497,3 +523,68 @@ struct Info: Identifiable {
     let error: String
 }
 ```
+
+## ForEach
+
+주어진 데이터 컬렉션을 순회하며, 각 항목에 대해 뷰를 생성
+
+```swift
+struct Person: Identifiable {
+    var id = UUID()
+    var name: String
+}
+
+struct ContentView: View {
+    let people = [Person(name: "Alice"), Person(name: "Bob")]
+
+    var body: some View {
+        List {
+            ForEach(people) { person in
+                Text(person.name)
+            }
+        }
+    }
+}
+```
+
+각 항목을 고유하게 식별하게 위해 `id` 파라미터를 사용.
+
+데이터 모델이 `Identifiable` 프로토콜을 따르면 바로 사용가능.
+
+각 항목 자체가 고유한 경우(`Hashable`)에는 `\.self` 로 사용 가능
+
+### Key Path 사용
+
+```swift
+struct Person: Hashable {
+    var name: String
+}
+
+struct ContentView: View {
+    let people = [Person(name: "Alice"), Person(name: "Bob")]
+
+    var body: some View {
+        List {
+            ForEach(people, id: \.self) { person in
+                Text(person.name)
+            }
+        }
+    }
+}
+```
+
+### **Identifiable**
+
+객체를 고유하게 식별가능 하게 함
+
+프로퍼티로 id 구현 필수
+
+### Hashable
+
+객체를 해시 값으로 변환할 수 있게 함.
+
+객체를 빠르게 비교 가능
+
+Equatable를 준수함
+
+Hashable를 준수하지 않는 타입이 있을 경우 hash(into:) 구현 필요

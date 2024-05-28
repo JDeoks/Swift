@@ -17,7 +17,7 @@
 
 뷰에서 상태변화를 감지할 수 있게 해줌
 
-`@Published` 로 선언된 프로퍼티의 값이 변경될 때마다 `objectWillChange` 를 통해 방출됨
+**`@Published` 로 선언된 프로퍼티의 값이 변경될 때마다 `objectWillChange` 를 통해 방출됨**
 
 뷰모델 클래스에 사용하는 프로토콜
 
@@ -328,6 +328,172 @@ struct OnboardingView: View {
 }
 ```
 
-뷰를 pop할 때 하위뷰에서 pathModel 접근이 필요함.
+뷰를 pop할 때 하위뷰에서 pathModel 접근이 필요 → environmentObject로 넘겨줌
 
-따라서 environmentObject로 넘겨줌
+# 컴포넌트
+
+## TextField
+
+```swift
+struct ContentView: View {
+    @State var text: String = ""
+
+    var body: some View {
+        VStack {
+            Text(text)
+            TextField(
+	            "Input your text.", // 플레이스홀더
+	            text: $text // 바인딩할 값
+            )
+        }
+    }
+}
+```
+
+## @FocusState
+
+SwiftUI에서 텍스트 필드나 다른 포커스 가능한 뷰의 포커스를 관리하기 위해 사용되는 프로퍼티 래퍼
+
+```swift
+struct ContentView: View {
+    @State var name: String = ""
+    @State var password: String = ""
+    @FocusState var focusField: Field?
+
+    enum Field: Hashable {
+        case name
+        case password
+    }
+
+    var body: some View {
+        Form {
+            TextField("Name", text: $name)
+                .focused($focusField, equals: .name)
+                .onSubmit {
+                    focusField = .password
+                }
+
+            TextField("Password", text: $password)
+                .focused($focusField, equals: .password)
+                .onSubmit {
+                    checkTextField()
+                }
+
+            Button("Login") {
+                checkTextField()
+            }
+        }
+        .onAppear {
+            focusField = .name
+        }
+    }
+
+    func checkTextField() {
+        if name.isEmpty {
+	        focusField = .name
+        } else if password.isEmpty {
+	        focusField = .password
+	      } else {
+		      focusField = nil
+		      // TODO: - 로그인 처리 로직
+	      }
+    }
+}
+```
+
+`.**focused` 각 텍스트 필드를 특정 포커스 상태와 연결\*\*
+
+**`.onSubmit` “Return” 키를 눌렀을 때의 동작을 정의**
+
+## ZStack
+
+하위뷰를 겹쳐서 표현 & 수직 수평으로 정렬
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        ZStack {
+            Color.blue
+                .frame(width: 200, height: 200)
+                .zIndex(0)  // 배경 색에 zIndex 0을 설정
+            Text("Hello, World!")
+                .foregroundColor(.white)
+                .zIndex(1)  // 텍스트에 zIndex 1을 설정
+        }
+    }
+}
+```
+
+## .overlay()
+
+뷰의 위에 다른 뷰를 겹칠 때 사용.
+
+원래 뷰와 같은 크기를 가지며, 지정된 위치에 새로운 뷰를 겹치게 함
+
+```swift
+var body: some View {
+    Color.blue
+        .frame(width: 200, height: 200)
+        .overlay(
+            Text("Hello, World!")
+                .foregroundColor(.white)
+        )
+}
+```
+
+## ScrollView
+
+```swift
+var body: some View {
+    ScrollView {
+        VStack(
+	        .vertical,
+	        showsIndicators: true
+        ) {
+            ForEach(0..<100) {
+                Text("Row \($0)")
+            }
+        }
+    }
+}
+```
+
+### 스크롤 위치 제어
+
+```swift
+ScrollView([.horizontal, .vertical]) {
+    // initially centered content
+}
+.defaultScrollAnchor(.center)
+```
+
+## .alert
+
+```swift
+struct ContentView: View {
+    @State private var isDisplayAlert = false
+    @State private var info: Info?
+
+    var body: some View {
+        Button("Save") {
+            info = Info(name: "정보 1", error: "정보 저장 실패")
+            isDisplayAlert = true
+        }
+        .alert("오류", isPresented: $isDisplayAlert, presenting: info) { info in
+            Button(role: .destructive) {
+                // Action for the button
+            } label: {
+                Text("Delete \(info.name)")
+            }
+        } message: { info in
+            Text(info.error)
+        }
+    }
+}
+
+struct Info: Identifiable {
+    let id = UUID()
+    let name: String
+    let error: String
+}
+```

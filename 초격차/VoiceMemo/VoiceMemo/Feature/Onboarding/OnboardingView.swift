@@ -10,16 +10,18 @@ struct OnboardingView: View {
     @StateObject private var pathModel = PathModel()
     @StateObject private var onboardingViewModel = OnboardingViewModel()
     @StateObject private var todoListViewModel = TodoListViewModel(todos: [Todo(title: "d3s", time: Date(), day: Date(), selected: false), Todo(title: "ds", time: Date(), day: Date(), selected: false)])
-
+    @StateObject private var memoListViewModel = MemoListViewModel()
+    
     var body: some View {
         // NavigationStack을 사용하여 앱 내의 네비게이션 경로를 관리.
         // pathModel.paths는 현재 네비게이션 경로를 바인딩하는 데 사용됨.
         NavigationStack(path: $pathModel.paths) {
             // OnboardingContentView를 루트뷰로 설정
 //            OnboardingContentView(onboardingViewModel: onboardingViewModel)
-            TodoListView()
+            MemoListView()
                 .environmentObject(pathModel)
                 .environmentObject(todoListViewModel)
+                .environmentObject(memoListViewModel)
                 .navigationDestination(for: PathType.self) { pathType in
                     // pathType의 값에 따라 해당하는 뷰를 생성합니다.
                     switch pathType {
@@ -32,9 +34,14 @@ struct OnboardingView: View {
                             .navigationBarBackButtonHidden()
                             .environmentObject(todoListViewModel) 
                         
-                    case .memoView:
-                        MemoView()
+                    case let .memoView(isCreateMode, memo):
+                        MemoView(
+                            memoViewModel: isCreateMode
+                            ? .init(memo: .init(title: "", content: "", date: .now))
+                            : .init(memo: memo ?? .init(title: "", content: "", date: .now)),
+                            isCreateMode: isCreateMode)
                             .navigationBarBackButtonHidden()
+                            .environmentObject(memoListViewModel)
                     }
                 }
         }

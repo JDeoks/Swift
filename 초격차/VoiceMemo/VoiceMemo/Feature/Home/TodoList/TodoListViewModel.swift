@@ -12,7 +12,7 @@ class TodoListViewModel: ObservableObject {
     // 투두 편집모드 여부
     @Published var isEditTodoMode: Bool
     // 삭제모드에서 선택한 투두 목록
-    @Published var removeTodos:[Todo]
+    @Published var removeTodos: [Todo]
     // alert 표시 여부
     @Published var isDisplayRemoveRodoAlert: Bool
     

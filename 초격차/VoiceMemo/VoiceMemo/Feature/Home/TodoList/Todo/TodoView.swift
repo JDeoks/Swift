@@ -122,7 +122,7 @@ fileprivate struct SelectDayView: View {
                 Button {
                     todoViewModel.setIsDisplayCalander(isDisplay: true)
                 } label: {
-                    Text("\(todoViewModel.day.fomattedDay)")
+                    Text("\(todoViewModel.day.formattedDay)")
                     .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(Color.customGreen)
                 }

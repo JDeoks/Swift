@@ -588,3 +588,28 @@ struct ContentView: View {
 Equatable를 준수함
 
 Hashable를 준수하지 않는 타입이 있을 경우 hash(into:) 구현 필요
+
+## .allowsHitTesting
+
+상호작용 여부 결정
+
+```swift
+var body: some View {
+    ZStack(alignment: .topLeading) {
+        TextEditor(text: $memoViewModel.memo.content)
+            .font(.system(size: 16))
+
+        if memoViewModel.memo.content.isEmpty {
+            Text("메모를 입력하세요.")
+                .font(.system(size: 16))
+                .foregroundStyle(Color.customGray1)
+                .allowsHitTesting(false)
+                .padding(.top, 10)
+                .padding(.leading, 5)
+        }
+    }
+    .padding(.horizontal, 20)
+}
+```
+
+위의 텍스트뷰에 false를 줌으로써 플레이스홀더 처럼 사용 가능

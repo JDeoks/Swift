@@ -13,7 +13,7 @@ struct Todo: Hashable {
     var selected: Bool
     
     var convertedDayAndtime: String {
-        String("\(day.fomattedDay) = \(time.formattedTime)에 알림")
+        String("\(day.formattedDay) = \(time.formattedTime)에 알림")
     }
     
 }

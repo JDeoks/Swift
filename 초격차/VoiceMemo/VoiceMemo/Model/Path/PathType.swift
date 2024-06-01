@@ -7,6 +7,7 @@ enum PathType: Hashable {
     
     case homeView
     case todoView
-    case memoView
-    
+    case memoView(isCreatMode: Bool, memo: Memo?)
+
 }
+

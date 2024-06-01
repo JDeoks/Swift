@@ -6,20 +6,43 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import FSCalendar
 
 class TableCalTableViewCell: UITableViewCell {
 
+    var tableCalVC: TableCalViewController?
+    
     @IBOutlet var calendarView: FSCalendar!
     @IBOutlet var calendarHeight: NSLayoutConstraint!
     
+    let disposeBag = DisposeBag()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        initUI()
     }
     
+    // MARK: - initUI
     private func initUI() {
         calendarView.dataSource = self
         calendarView.delegate = self
+    }
+    
+    // MARK: - bind
+    func bind() {
+        if let tableCalVC = self.tableCalVC {
+            tableCalVC.calendarMode
+                .subscribe(onNext: { [weak self] mode in
+                    if mode == .month {
+                        self?.calendarView.setScope(.month, animated: true)
+                    } else {
+                        self?.calendarView.setScope(.week, animated: true)
+                    }
+                })
+                .disposed(by: disposeBag)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,15 +55,9 @@ class TableCalTableViewCell: UITableViewCell {
 
 extension TableCalTableViewCell: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        if calendar.scope == .week {
-                    // 일주일 단위일 때는 높이를 맞게 설정
-                    calendarHeight.constant = bounds.height
-                }
-                else if calendar.scope == .month {
-                    // 한달 단위일 때는 높이를 전체화면으로 설정
-                    calendarHeight.constant = self.bounds.height
-                }
-
+        
+        print(#function, bounds)
+        calendarHeight.constant = bounds.height
         self.layoutIfNeeded()
     }
 }

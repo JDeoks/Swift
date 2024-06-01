@@ -17,47 +17,55 @@ class TableCalTableViewCell: UITableViewCell {
     @IBOutlet var calendarView: FSCalendar!
     @IBOutlet var calendarHeight: NSLayoutConstraint!
     
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         initUI()
     }
     
-    // MARK: - initUI
+    override func prepareForReuse() {
+        disposeBag = DisposeBag()
+    }
+    
     private func initUI() {
         calendarView.dataSource = self
         calendarView.delegate = self
     }
     
-    // MARK: - bind
     func bind() {
-        if let tableCalVC = self.tableCalVC {
-            tableCalVC.calendarMode
-                .subscribe(onNext: { [weak self] mode in
-                    if mode == .month {
-                        self?.calendarView.setScope(.month, animated: true)
-                    } else {
-                        self?.calendarView.setScope(.week, animated: true)
-                    }
-                })
-                .disposed(by: disposeBag)
-        }
+        guard let tableCalVC = self.tableCalVC else { return }
+        tableCalVC.calendarMode
+            .subscribe(onNext: { mode in
+                self.calendarView.setScope(mode, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        // 초기 높이 설정
+        calendarView.setScope(.week, animated: false)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }
 
 extension TableCalTableViewCell: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        
-        print(#function, bounds)
         calendarHeight.constant = bounds.height
         self.layoutIfNeeded()
+        
+        if let tableView = self.superview as? UITableView {
+            // ViewController의 calendarHeight 값을 업데이트합니다.
+            if let viewController = tableCalVC {
+//                viewController.calendarHeight = bounds.height
+//                UIView.animate(withDuration: 0.3) {
+//                    tableView.beginUpdates()
+//                    tableView.endUpdates()
+//                }
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            }
+        }
     }
 }

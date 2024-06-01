@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     private var calanderMode: CalendarMode = .week
     
     @IBOutlet var monthButtonStackView: UIStackView!
-    @IBOutlet var calenderView: FSCalendar!
+    @IBOutlet var calendarView: FSCalendar!
     @IBOutlet var calendarHeight: NSLayoutConstraint!
+    @IBOutlet var tableView: UITableView!
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -29,9 +31,11 @@ class ViewController: UIViewController {
     
     private func initUI() {
         // calander
-        calenderView.dataSource = self
-        calenderView.delegate = self
-        calenderView.scope = .week
+        calendarView.dataSource = self
+        calendarView.delegate = self
+        calendarView.scope = .week
+        calendarView.calendarHeaderView.isHidden = true
+        calendarView.headerHeight = 6.0
     }
     
     private func action() {
@@ -41,10 +45,10 @@ class ViewController: UIViewController {
                 print("monthButtonStackView.rx.tapGesture()")
                 if self.calanderMode == .month {
                     self.calanderMode = .week
-                    self.calenderView.setScope(.week, animated: true)
+                    self.calendarView.setScope(.week, animated: true)
                 } else {
                     self.calanderMode = .month
-                    self.calenderView.setScope(.month, animated: true)
+                    self.calendarView.setScope(.month, animated: true)
                 }
                 
             })

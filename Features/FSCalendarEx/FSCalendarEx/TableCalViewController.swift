@@ -19,13 +19,12 @@ class TableCalViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     // 캘린더의 높이를 저장하기 위한 변수
-    var calendarHeight: CGFloat = 400  // 초기 높이를 설정합니다.
+//    var calendarHeight: CGFloat = 400  // 초기 높이를 설정합니다.
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
         action()
-        calTableView.reloadData()  // 초기 데이터 로드 후 강제 레이아웃 업데이트
         calTableView.layoutIfNeeded()
     }
     
@@ -70,6 +69,7 @@ extension TableCalViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
+            print(type(of: self), #function)
             guard let calCell = tableView.dequeueReusableCell(withIdentifier: "TableCalTableViewCell") as? TableCalTableViewCell else {
                 return UITableViewCell()
             }
@@ -80,6 +80,7 @@ extension TableCalViewController: UITableViewDataSource, UITableViewDelegate {
             guard let todoCell = tableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell") as? TodoTableViewCell else {
                 return UITableViewCell()
             }
+            todoCell.title.text = "\(indexPath)"
             return todoCell
         }
     }

@@ -85,22 +85,31 @@
                                     <constraint firstAttribute="height" constant="393" id="v2v-5a-wYv"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-FQ-sYd">
+                                <rect key="frame" x="0.0" y="500" width="393" height="318"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cXu-YQ-bVe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L8s-WH-qec"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X0i-FQ-sYd" secondAttribute="trailing" id="OLQ-g8-BFg"/>
                             <constraint firstItem="cXu-YQ-bVe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PdT-QH-3oa"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UgA-Ns-WZh"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XVp-N7-utr"/>
+                            <constraint firstItem="X0i-FQ-sYd" firstAttribute="top" secondItem="cXu-YQ-bVe" secondAttribute="bottom" id="Xoh-aO-jRh"/>
+                            <constraint firstItem="X0i-FQ-sYd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="doz-ys-2m0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X0i-FQ-sYd" secondAttribute="bottom" id="qcH-DF-fYi"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vFF-Lr-3Ih"/>
                             <constraint firstItem="cXu-YQ-bVe" firstAttribute="top" secondItem="Yoy-4u-Zcb" secondAttribute="bottom" id="zdg-iM-o3u"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarHeight" destination="v2v-5a-wYv" id="9kN-0f-brI"/>
-                        <outlet property="calenderView" destination="cXu-YQ-bVe" id="NPv-rl-gr7"/>
+                        <outlet property="calendarView" destination="cXu-YQ-bVe" id="NPv-rl-gr7"/>
                         <outlet property="monthButtonStackView" destination="QAL-8Q-ajM" id="O5I-vg-dbv"/>
+                        <outlet property="tableView" destination="X0i-FQ-sYd" id="GUp-ok-l0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

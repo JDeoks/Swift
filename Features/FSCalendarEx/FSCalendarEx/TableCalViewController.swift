@@ -58,6 +58,7 @@ class TableCalViewController: UIViewController {
 //            self.calTableView.endUpdates()
 //        }
     }
+    
 }
 
 extension TableCalViewController: UITableViewDataSource, UITableViewDelegate {
@@ -85,11 +86,5 @@ extension TableCalViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return calendarHeight  // 저장된 캘린더 높이 값을 반환합니다.
-//        } else {
-//            return 100
-//        }
-//    }
+    
 }

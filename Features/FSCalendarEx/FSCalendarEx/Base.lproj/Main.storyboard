@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gv8-yW-19H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -106,8 +106,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calendar" destination="cXu-YQ-bVe" id="NPv-rl-gr7"/>
                         <outlet property="calendarHeight" destination="v2v-5a-wYv" id="9kN-0f-brI"/>
-                        <outlet property="calendarView" destination="cXu-YQ-bVe" id="NPv-rl-gr7"/>
                         <outlet property="monthButtonStackView" destination="QAL-8Q-ajM" id="O5I-vg-dbv"/>
                         <outlet property="tableView" destination="X0i-FQ-sYd" id="GUp-ok-l0N"/>
                     </connections>

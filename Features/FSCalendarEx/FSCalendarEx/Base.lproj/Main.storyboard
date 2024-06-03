@@ -79,14 +79,14 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXu-YQ-bVe" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="107" width="393" height="393"/>
+                                <rect key="frame" x="0.0" y="107" width="393" height="453"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="393" id="v2v-5a-wYv"/>
+                                    <constraint firstAttribute="height" constant="453" id="v2v-5a-wYv"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-FQ-sYd">
-                                <rect key="frame" x="0.0" y="500" width="393" height="318"/>
+                                <rect key="frame" x="0.0" y="560" width="393" height="258"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -211,6 +211,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u34-iH-Zwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032.824427480916" y="3.5211267605633805"/>
+        </scene>
+        <!--View Controller3-->
+        <scene sceneID="Efp-Or-3VX">
+            <objects>
+                <viewController id="OlC-P9-ay4" customClass="ViewController3" customModule="FSCalendarEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DVY-ud-Ywm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-Id-7QO" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="104" width="393" height="700"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="qoM-Cd-qUM"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz0-DS-15g">
+                                <rect key="frame" x="159" y="642" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="OlC-P9-ay4" eventType="touchUpInside" id="U8n-uO-AaN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pHt-kD-PCO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pHt-kD-PCO" firstAttribute="trailing" secondItem="aTh-Id-7QO" secondAttribute="trailing" id="Pub-b8-RXN"/>
+                            <constraint firstItem="aTh-Id-7QO" firstAttribute="leading" secondItem="pHt-kD-PCO" secondAttribute="leading" id="fRS-NR-4YQ"/>
+                            <constraint firstItem="aTh-Id-7QO" firstAttribute="top" secondItem="pHt-kD-PCO" secondAttribute="top" constant="45" id="uTF-Jp-Vik"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="aTh-Id-7QO" id="ud0-jC-BZt"/>
+                        <outlet property="calendarHeight" destination="qoM-Cd-qUM" id="rHE-wD-kJl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uuS-Uu-4aR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="4"/>
         </scene>
     </scenes>
     <resources>

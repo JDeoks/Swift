@@ -5,7 +5,7 @@
 //  Created by JDeoks on 6/2/24.
 //
 
-
+import Foundation
 import UIKit
 import FSCalendar
 import RxSwift
@@ -15,8 +15,6 @@ import SwiftDate
 import Kingfisher
 
 class ViewController: UIViewController {
-    
-    var currentMonth: Date!
 
     private var calanderMode: CalendarMode = .week
     
@@ -49,30 +47,33 @@ class ViewController: UIViewController {
         // 헤더 없애기
         calendar.calendarHeaderView.isHidden = true
         calendar.headerHeight = 8
+        // 요일 높이 설정
+        calendar.weekdayHeight = 20
+        // CalendarCell 등록
         calendar.register(CalendarCell.self, forCellReuseIdentifier: CalendarCell.description())
-        // 선택한 날짜, 오늘 날짜 원 색상
+        // 선택한 날짜, 오늘 날짜 원 색상 제거
         calendar.appearance.selectionColor = .clear
         calendar.appearance.todayColor = .clear
         // 요일 표시 언어 설정
         calendar.locale = Locale(identifier: "ko_KR")
-        // 요일 색 설정 (e.g. 월화수)
+        // 요일 색 설정
         calendar.appearance.weekdayTextColor = .black
+        calendar.backgroundColor = .clear
         
         // tableView
         tableView.dataSource = self
         tableView.delegate = self
-        // todoTableViewCell
+        // TodoTableViewCell 등록
         let todoTableViewCell = UINib(nibName: "TodoTableViewCell", bundle: nil)
         tableView.register(todoTableViewCell, forCellReuseIdentifier: "TodoTableViewCell")
     }
     
     private func initData() {
         calendar.select(Date())
-        let currentPageDate = calendar.currentPage
-        currentMonth = DateManager.getMonth(from: currentPageDate)
     }
     
     private func action() {
+        // 주단위 월단위 스위치 버튼
         monthButtonStackView.rx.tapGesture()
             .when(.recognized)
             .subscribe(onNext: { _ in
@@ -91,40 +92,42 @@ class ViewController: UIViewController {
 
 extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        print(type(of: self), #function, bounds.height)
+        
         calendarHeight.constant = bounds.height// * heightRatio
         self.view.layoutIfNeeded()
-
     }
+
     
-    /// 셀 반환
+    /// 셀  생성
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         
-        print(type(of: self), #function)
+//        print(type(of: self), #function)
         let cell = calendar.dequeueReusableCell(withIdentifier: CalendarCell.description(), for: date, at: position) as! CalendarCell
-        
-        // 이번 저번 달 글씨 색
-        let month = DateManager.getMonth(from: date)
-        if month != currentMonth {
-            cell.backImageView.alpha = 0.5
-        }
+//        print(type(of: self), #function, cell.frame)
 
-        // 선택 날짜 표시
-        let selectedDay = DateManager.getDay(from: calendar.selectedDate!)
-        let day = DateManager.getDay(from: date)
-        if selectedDay == day {
-            cell.selectIndicator.alpha = 1
-        } else {
-            cell.selectIndicator.alpha = 0
-        }
+        // TODO: - 이번 저번 달 글씨 색
+
         let randomInt = Int.random(in: 1...100)
         if randomInt < 30 {
             let url = URL(string: "https://picsum.photos/200/300?random=\(randomInt)")
             cell.backImageView.kf.setImage(with: url, options: [.transition(.fade(0.5))])
         }
-
+        // 현재 달 날짜만 색 진하게 설정
+        if position == .current {
+            cell.backImageView.alpha = 1
+            cell.dateLabel.alpha = 1
+//            cell.selectIndicator.alpha = 1
+        } else {
+            cell.backImageView.alpha = 0.3
+            cell.dateLabel.alpha = 0.3
+//            cell.selectIndicator.alpha = 0
+        }
+        
+        cell.dateLabel.text = "\(date.dayStr)"
         return cell
     }
-    
+
     /// 선택 시
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(type(of: self), #function)
@@ -140,63 +143,9 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         let cell = calendar.cell(for: date, at: monthPosition) as! CalendarCell
         cell.selectIndicator.alpha = 0
     }
-        
-    /// 선택 날짜 타이틀 색상
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleSelectionColorFor date: Date) -> UIColor? {
-        // TODO: - 저번 or 다음 달이면 타이틀 회색
-        
-        // 이번 저번 달 글씨 색
-        let selectedMonth = DateManager.getMonth(from: calendar.selectedDate!)
-        let month = DateManager.getMonth(from: date)
-        if month != selectedMonth {
-            
-            return .systemGray4
-        }
-        
-        // 날짜만 추출하여 비교
-        if let now = DateManager.getDay(from: Date()),
-           let selected = DateManager.getDay(from: date) {
-            print(now, selected)
-            if now == selected {
-                print("날짜 같음")
-                return UIColor(red: 17/255, green: 152/255, blue: 34/255, alpha: 1)
-            } else {
-                return .black
-            }
-        }
-        return .black
-    }
-    
-    /// 기본 날짜 타이틀 색상
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-        // 날짜만 추출하여 비교
-        
-        // 이번 저번 달 글씨 색
-        let selectedMonth = DateManager.getMonth(from: calendar.selectedDate!)
-        let month = DateManager.getMonth(from: date)
-        if month != selectedMonth {
-            return .systemGray4
-        }
-        
-        if let now = DateManager.getDay(from: Date()),
-           let selected = DateManager.getDay(from: date) {
-            print(now, selected)
-            if now == selected {
-                print("날짜 같음")
-                return UIColor(red: 17/255, green: 152/255, blue: 34/255, alpha: 1)
-            } else {
-                return .black
-            }
-        }
-        return .black
-    }
-    
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        let currentPageDate = calendar.currentPage
-        currentMonth = DateManager.getMonth(from: currentPageDate)
-    }
-    
 }
+
+
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

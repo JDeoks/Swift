@@ -12,6 +12,8 @@
 		2A6496E52C0CD5CF00F0D713 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6496E42C0CD5CF00F0D713 /* SwiftDate */; };
 		2A6496E82C0CD67E00F0D713 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6496E72C0CD67E00F0D713 /* DateManager.swift */; };
 		2A6496EB2C0CE0FF00F0D713 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6496EA2C0CE0FF00F0D713 /* Kingfisher */; };
+		2A6496ED2C0E2B4D00F0D713 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6496EC2C0E2B4D00F0D713 /* ViewController3.swift */; };
+		2A6496F42C0E3E5500F0D713 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6496F32C0E3E5500F0D713 /* Date+.swift */; };
 		2A6BF9C32C0B85A2003032AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BF9C22C0B85A2003032AD /* AppDelegate.swift */; };
 		2A6BF9C52C0B85A2003032AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BF9C42C0B85A2003032AD /* SceneDelegate.swift */; };
 		2A6BF9C72C0B85A2003032AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BF9C62C0B85A2003032AD /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		2A6496DA2C0C58A500F0D713 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		2A6496E72C0CD67E00F0D713 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		2A6496EC2C0E2B4D00F0D713 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		2A6496F32C0E3E5500F0D713 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		2A6BF9BF2C0B85A2003032AD /* FSCalendarEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSCalendarEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6BF9C22C0B85A2003032AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A6BF9C42C0B85A2003032AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				2A6BF9C22C0B85A2003032AD /* AppDelegate.swift */,
 				2A6BF9C42C0B85A2003032AD /* SceneDelegate.swift */,
 				2A6BF9C62C0B85A2003032AD /* ViewController.swift */,
+				2A6496F32C0E3E5500F0D713 /* Date+.swift */,
+				2A6496EC2C0E2B4D00F0D713 /* ViewController3.swift */,
 				2A6BF9E12C0B880E003032AD /* TableCalViewController.swift */,
 				2A6496DA2C0C58A500F0D713 /* CalendarCell.swift */,
 				2A6BF9C82C0B85A2003032AD /* Main.storyboard */,
@@ -203,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6496F42C0E3E5500F0D713 /* Date+.swift in Sources */,
+				2A6496ED2C0E2B4D00F0D713 /* ViewController3.swift in Sources */,
 				2A6BF9C72C0B85A2003032AD /* ViewController.swift in Sources */,
 				2A6BF9C32C0B85A2003032AD /* AppDelegate.swift in Sources */,
 				2A6BF9E52C0B8856003032AD /* TableCalTableViewCell.swift in Sources */,

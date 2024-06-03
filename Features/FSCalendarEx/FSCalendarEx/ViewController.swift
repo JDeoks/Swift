@@ -31,11 +31,6 @@ class ViewController: UIViewController {
         initUI()
         action()
         initData()
-        
-        let now = Date()
-        if let dateOnly = DateManager.getDay(from: now) {
-            print(dateOnly)  // 출력: yyyy-MM-dd 00:00:00 형태의 날짜
-        }
     }
     
     private func initUI() {
@@ -91,40 +86,46 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
-    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        print(type(of: self), #function, bounds.height)
-        
-        calendarHeight.constant = bounds.height// * heightRatio
-        self.view.layoutIfNeeded()
-    }
-
-    
     /// 셀  생성
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         
-//        print(type(of: self), #function)
         let cell = calendar.dequeueReusableCell(withIdentifier: CalendarCell.description(), for: date, at: position) as! CalendarCell
-//        print(type(of: self), #function, cell.frame)
-
-        // TODO: - 이번 저번 달 글씨 색
-
-        let randomInt = Int.random(in: 1...100)
-        if randomInt < 30 {
-            let url = URL(string: "https://picsum.photos/200/300?random=\(randomInt)")
+        
+        // 이미지 임시 설정
+//        let randomInt = Int.random(in: 1...100)
+        if  [1, 3, 5, 12, 17, 20, 24].contains(Int(date.dayStr)) {
+            let url = URL(string: "https://picsum.photos/200?random=\(date.dayStr)")
             cell.backImageView.kf.setImage(with: url, options: [.transition(.fade(0.5))])
         }
+        
         // 현재 달 날짜만 색 진하게 설정
         if position == .current {
             cell.backImageView.alpha = 1
             cell.dateLabel.alpha = 1
-//            cell.selectIndicator.alpha = 1
         } else {
             cell.backImageView.alpha = 0.3
             cell.dateLabel.alpha = 0.3
-//            cell.selectIndicator.alpha = 0
         }
         
+        // 날짜 텍스트 설정
         cell.dateLabel.text = "\(date.dayStr)"
+        
+        // 오늘 날짜 초록색
+        if Date.isSameDay(date, Date()) {
+            cell.dateLabel.textColor = .systemGreen
+        } else {
+            cell.dateLabel.textColor = .black
+        }
+        
+        // 선택한 날짜 밑줄
+        if let selectedDate = calendar.selectedDate {
+            if Date.isSameDay(date, selectedDate) {
+                cell.selectIndicator.alpha = 1
+            } else {
+                cell.selectIndicator.alpha = 0
+            }
+        }
+
         return cell
     }
 
@@ -132,16 +133,27 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(type(of: self), #function)
 
-        let cell = calendar.cell(for: date, at: monthPosition) as! CalendarCell
+        guard let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell else {
+            return
+        }
         cell.selectIndicator.alpha = 1
     }
     
     /// 선택 해제 시
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(type(of: self), #function)
-
-        let cell = calendar.cell(for: date, at: monthPosition) as! CalendarCell
+        
+        guard let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell else {
+            return
+        }
         cell.selectIndicator.alpha = 0
+    }
+    
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        print(type(of: self), #function, bounds.height)
+        
+        calendarHeight.constant = bounds.height
+        self.view.layoutIfNeeded()
     }
 }
 

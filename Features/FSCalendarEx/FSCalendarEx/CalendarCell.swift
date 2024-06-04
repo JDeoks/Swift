@@ -77,5 +77,4 @@ class CalendarCell: FSCalendarCell {
         
         backImageView.image = nil
     }
-
 }

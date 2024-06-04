@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet var monthButtonStackView: UIStackView!
     @IBOutlet var calendar: FSCalendar!
     @IBOutlet var calendarHeight: NSLayoutConstraint!
+    @IBOutlet var calendarPadding: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     
     let disposeBag = DisposeBag()
@@ -32,6 +33,11 @@ class ViewController: UIViewController {
         action()
         initData()
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        calendar.collectionViewLayout.invalidateLayout()
+//    }
     
     private func initUI() {
         // calander
@@ -54,6 +60,16 @@ class ViewController: UIViewController {
         // 요일 색 설정
         calendar.appearance.weekdayTextColor = .black
         calendar.backgroundColor = .clear
+//        calendar.clipsToBounds = false
+//        calendar.layer.masksToBounds = false
+        
+        // TODO: - 버그
+//        calendar.snp.makeConstraints { make in
+//            let inset = calculateCalendarPadding(targetPadding: 20, contentWidth: 36)
+//            make.leading.equalToSuperview().offset(inset)
+//            make.trailing.equalToSuperview().offset(-inset).priority(1000)
+//        } // 22일 에서 주단위로 보기 하면 셀 없어짐
+        // self.view.layoutIfNeeded() 모든 셀에 밑줄 쳐짐
         
         // tableView
         tableView.dataSource = self
@@ -92,8 +108,7 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         let cell = calendar.dequeueReusableCell(withIdentifier: CalendarCell.description(), for: date, at: position) as! CalendarCell
         
         // 이미지 임시 설정
-//        let randomInt = Int.random(in: 1...100)
-        if  [1, 3, 5, 12, 17, 20, 24].contains(Int(date.dayStr)) {
+        if  (0...100).contains(Int(date.dayStr)!) {
             let url = URL(string: "https://picsum.photos/200?random=\(date.dayStr)")
             cell.backImageView.kf.setImage(with: url, options: [.transition(.fade(0.5))])
         }
@@ -132,11 +147,27 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
     /// 선택 시
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(type(of: self), #function)
-
+        
+        // 선택한 날짜가 다른 달일 경우 이동
+        if monthPosition == .next {
+            let currentPage: Date = calendar.currentPage
+            if let month = Calendar.current.date(byAdding: .month, value : 1, to: currentPage) {
+                self.calendar.setCurrentPage(month, animated: true)
+            }
+        } else if monthPosition == .previous {
+            let currentPage: Date = calendar.currentPage
+            if let month = Calendar.current.date(byAdding: .month, value : -1, to: currentPage) {
+                self.calendar.setCurrentPage(month, animated: true)
+            }
+        }
+        
         guard let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell else {
             return
         }
-        cell.selectIndicator.alpha = 1
+        
+        UIView.animate(withDuration: 0.2) {
+            cell.selectIndicator.alpha = 1
+        }
     }
     
     /// 선택 해제 시
@@ -146,7 +177,9 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         guard let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell else {
             return
         }
-        cell.selectIndicator.alpha = 0
+        UIView.animate(withDuration: 0.2) {
+            cell.selectIndicator.alpha = 0
+        }
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -155,9 +188,17 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         calendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
     }
+    
+    /// targetPadding을 만들기 위한 슈퍼뷰와 캘린더의 패딩 계산 하는 함수
+    /// targetPadding: 목표하는 셀의 한쪽 패딩 + 캘린더 패딩 수치
+    /// contentWidth: 셀의 컨텐프 너비 (패딩 제외)
+    func calculateCalendarPadding(targetPadding: CGFloat, contentWidth: CGFloat) -> CGFloat {
+        let w = self.view.bounds.width
+        let x = (14 * targetPadding + 7 * contentWidth - w) / 12
+        print(x)
+        return x
+    }
 }
-
-
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

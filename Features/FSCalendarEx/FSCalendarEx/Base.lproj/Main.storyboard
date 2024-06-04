@@ -79,7 +79,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXu-YQ-bVe" customClass="FSCalendar">
-                                <rect key="frame" x="10" y="107" width="373" height="453"/>
+                                <rect key="frame" x="11.666666666666657" y="107" width="369.66666666666674" height="453"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="453" id="v2v-5a-wYv"/>
@@ -93,9 +93,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="L8s-WH-qec"/>
+                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="88I-n4-Dt4"/>
+                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" priority="750" constant="-11.58" id="L8s-WH-qec"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X0i-FQ-sYd" secondAttribute="trailing" id="OLQ-g8-BFg"/>
-                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PdT-QH-3oa"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UgA-Ns-WZh"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XVp-N7-utr"/>
                             <constraint firstItem="X0i-FQ-sYd" firstAttribute="top" secondItem="cXu-YQ-bVe" secondAttribute="bottom" id="Xoh-aO-jRh"/>
@@ -108,6 +108,7 @@
                     <connections>
                         <outlet property="calendar" destination="cXu-YQ-bVe" id="NPv-rl-gr7"/>
                         <outlet property="calendarHeight" destination="v2v-5a-wYv" id="9kN-0f-brI"/>
+                        <outlet property="calendarPadding" destination="L8s-WH-qec" id="MNR-qq-gkX"/>
                         <outlet property="monthButtonStackView" destination="QAL-8Q-ajM" id="O5I-vg-dbv"/>
                         <outlet property="tableView" destination="X0i-FQ-sYd" id="GUp-ok-l0N"/>
                     </connections>

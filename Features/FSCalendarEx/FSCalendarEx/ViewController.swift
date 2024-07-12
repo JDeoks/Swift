@@ -21,8 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet var monthButtonStackView: UIStackView!
     @IBOutlet var calendar: FSCalendar!
     @IBOutlet var calendarHeight: NSLayoutConstraint!
-    @IBOutlet var calendarPadding: NSLayoutConstraint!
-    @IBOutlet var tableView: UITableView!
+//    @IBOutlet var tableView: UITableView!
     
     let disposeBag = DisposeBag()
     
@@ -34,10 +33,10 @@ class ViewController: UIViewController {
         initData()
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        calendar.collectionViewLayout.invalidateLayout()
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        calendar.collectionViewLayout.invalidateLayout()
+    }
     
     private func initUI() {
         // calander
@@ -46,8 +45,8 @@ class ViewController: UIViewController {
         // 스코프 설정
         calendar.scope = .week
         // 헤더 없애기
-        calendar.calendarHeaderView.isHidden = true
-        calendar.headerHeight = 8
+//        calendar.calendarHeaderView.isHidden = true
+//        calendar.headerHeight = 8
         // 요일 높이 설정
         calendar.weekdayHeight = 20
         // CalendarCell 등록
@@ -60,23 +59,16 @@ class ViewController: UIViewController {
         // 요일 색 설정
         calendar.appearance.weekdayTextColor = .black
         calendar.backgroundColor = .clear
-//        calendar.clipsToBounds = false
-//        calendar.layer.masksToBounds = false
+        calendar.clipsToBounds = false
+        calendar.layer.masksToBounds = false
         
-        // TODO: - 버그
+//        // TODO: - 버그
 //        calendar.snp.makeConstraints { make in
 //            let inset = calculateCalendarPadding(targetPadding: 20, contentWidth: 36)
 //            make.leading.equalToSuperview().offset(inset)
 //            make.trailing.equalToSuperview().offset(-inset).priority(1000)
 //        } // 22일 에서 주단위로 보기 하면 셀 없어짐
-        // self.view.layoutIfNeeded() 모든 셀에 밑줄 쳐짐
-        
-        // tableView
-        tableView.dataSource = self
-        tableView.delegate = self
-        // TodoTableViewCell 등록
-        let todoTableViewCell = UINib(nibName: "TodoTableViewCell", bundle: nil)
-        tableView.register(todoTableViewCell, forCellReuseIdentifier: "TodoTableViewCell")
+//         self.view.layoutIfNeeded() //모든 셀에 밑줄 쳐짐
     }
     
     private func initData() {
@@ -118,8 +110,8 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
             cell.backImageView.alpha = 1
             cell.dateLabel.alpha = 1
         } else {
-            cell.backImageView.alpha = 0.3
-            cell.dateLabel.alpha = 0.3
+            cell.backImageView.alpha = 0.2
+            cell.dateLabel.alpha = 0.2
         }
         
         // 날짜 텍스트 설정
@@ -189,6 +181,14 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         self.view.layoutIfNeeded()
     }
     
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        let currentPageDate = calendar.currentPage
+        let month = Calendar.current.component(.month, from: currentPageDate)
+        print("Current page month: \(month)")
+        // Perform any actions you need based on the new current page
+    }
+
+        
     /// targetPadding을 만들기 위한 슈퍼뷰와 캘린더의 패딩 계산 하는 함수
     /// targetPadding: 목표하는 셀의 한쪽 패딩 + 캘린더 패딩 수치
     /// contentWidth: 셀의 컨텐프 너비 (패딩 제외)
@@ -198,19 +198,6 @@ extension ViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         print(x)
         return x
     }
-}
-
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let todoCell = tableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell") as? TodoTableViewCell else {
-            return UITableViewCell()
-        }
-        todoCell.title.text = "\(indexPath)"
-        return todoCell
-    }
+    
+    
 }

@@ -16,11 +16,11 @@ class ViewController3: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        calendar.delegate = self
-        calendar.dataSource = self
-        calendar.scope = .week
-        calendar.register(CalendarCell.self, forCellReuseIdentifier: CalendarCell.description())
-        calendar.backgroundColor = .systemMint
+//        calendar.delegate = self
+//        calendar.dataSource = self
+////        calendar.scope = .week
+//        calendar.register(CalendarCell.self, forCellReuseIdentifier: CalendarCell.description())
+//        calendar.backgroundColor = .systemMint
         // Do any additional setup after loading the view.
     }
     

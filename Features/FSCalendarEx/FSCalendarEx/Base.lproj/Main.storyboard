@@ -78,39 +78,29 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXu-YQ-bVe" customClass="FSCalendar">
-                                <rect key="frame" x="11.666666666666657" y="107" width="369.66666666666674" height="453"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTU-Xj-jnW" customClass="FSCalendar">
+                                <rect key="frame" x="11" y="107" width="371" height="453"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="453" id="v2v-5a-wYv"/>
+                                    <constraint firstAttribute="height" constant="453" id="yu4-EO-PxO"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-FQ-sYd">
-                                <rect key="frame" x="0.0" y="560" width="393" height="258"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="88I-n4-Dt4"/>
-                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" priority="750" constant="-11.58" id="L8s-WH-qec"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X0i-FQ-sYd" secondAttribute="trailing" id="OLQ-g8-BFg"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UgA-Ns-WZh"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XVp-N7-utr"/>
-                            <constraint firstItem="X0i-FQ-sYd" firstAttribute="top" secondItem="cXu-YQ-bVe" secondAttribute="bottom" id="Xoh-aO-jRh"/>
-                            <constraint firstItem="X0i-FQ-sYd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="doz-ys-2m0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X0i-FQ-sYd" secondAttribute="bottom" id="qcH-DF-fYi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zTU-Xj-jnW" secondAttribute="trailing" constant="11" id="chi-BO-rYg"/>
+                            <constraint firstItem="zTU-Xj-jnW" firstAttribute="top" secondItem="Yoy-4u-Zcb" secondAttribute="bottom" id="scl-lk-8cu"/>
                             <constraint firstItem="Yoy-4u-Zcb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vFF-Lr-3Ih"/>
-                            <constraint firstItem="cXu-YQ-bVe" firstAttribute="top" secondItem="Yoy-4u-Zcb" secondAttribute="bottom" id="zdg-iM-o3u"/>
+                            <constraint firstItem="zTU-Xj-jnW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="wVn-pC-deu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calendar" destination="cXu-YQ-bVe" id="NPv-rl-gr7"/>
-                        <outlet property="calendarHeight" destination="v2v-5a-wYv" id="9kN-0f-brI"/>
-                        <outlet property="calendarPadding" destination="L8s-WH-qec" id="MNR-qq-gkX"/>
+                        <outlet property="calendar" destination="zTU-Xj-jnW" id="DpA-mI-7zV"/>
+                        <outlet property="calendarHeight" destination="yu4-EO-PxO" id="t2a-4I-zTs"/>
                         <outlet property="monthButtonStackView" destination="QAL-8Q-ajM" id="O5I-vg-dbv"/>
-                        <outlet property="tableView" destination="X0i-FQ-sYd" id="GUp-ok-l0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

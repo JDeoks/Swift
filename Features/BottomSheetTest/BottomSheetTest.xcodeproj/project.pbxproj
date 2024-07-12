@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A4538392C417451000C3315 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4538382C417451000C3315 /* FloatingPanel */; };
 		2A45383B2C4174FA000C3315 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45383A2C4174FA000C3315 /* ContentViewController.swift */; };
-		2A45383D2C417511000C3315 /* FixedHeightPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45383C2C417511000C3315 /* FixedHeightPanelLayout.swift */; };
 		2AB3DC042C4164D2003A44F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3DC032C4164D2003A44F1 /* AppDelegate.swift */; };
 		2AB3DC062C4164D2003A44F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3DC052C4164D2003A44F1 /* SceneDelegate.swift */; };
 		2AB3DC082C4164D2003A44F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3DC072C4164D2003A44F1 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		2A45383A2C4174FA000C3315 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		2A45383C2C417511000C3315 /* FixedHeightPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightPanelLayout.swift; sourceTree = "<group>"; };
 		2AB3DC002C4164D2003A44F1 /* BottomSheetTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheetTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB3DC032C4164D2003A44F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB3DC052C4164D2003A44F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 				2AB3DC052C4164D2003A44F1 /* SceneDelegate.swift */,
 				2AB3DC072C4164D2003A44F1 /* ViewController.swift */,
 				2A45383A2C4174FA000C3315 /* ContentViewController.swift */,
-				2A45383C2C417511000C3315 /* FixedHeightPanelLayout.swift */,
 				2AB3DC092C4164D2003A44F1 /* Main.storyboard */,
 				2AB3DC0C2C4164D3003A44F1 /* Assets.xcassets */,
 				2AB3DC0E2C4164D3003A44F1 /* LaunchScreen.storyboard */,
@@ -155,7 +152,6 @@
 				2A45383B2C4174FA000C3315 /* ContentViewController.swift in Sources */,
 				2AB3DC082C4164D2003A44F1 /* ViewController.swift in Sources */,
 				2AB3DC042C4164D2003A44F1 /* AppDelegate.swift in Sources */,
-				2A45383D2C417511000C3315 /* FixedHeightPanelLayout.swift in Sources */,
 				2AB3DC062C4164D2003A44F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

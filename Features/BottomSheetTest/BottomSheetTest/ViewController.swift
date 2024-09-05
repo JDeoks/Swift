@@ -13,6 +13,8 @@ class ViewController: UIViewController, FloatingPanelControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         SceneManager.shared.presentBottomSheet(vc: self, animated: false)
+        let url = URL(string: "nil")
+        print(url!)
     }
     
     // 스와이프 추적
@@ -57,11 +59,18 @@ class SceneManager {
         fpc.surfaceView.grabberHandle.isHidden = true
         
         // fpc present
-        fpc.addPanel(toParent: vc, animated: animated)
+        // addPanel, present 두 방법 모두 가능
+//        fpc.addPanel(toParent: vc, animated: animated)
+        vc.present(fpc, animated: true)
     }
 }
 
 class MyFloatingPanelLayout: FloatingPanelLayout {
+    var heightFromSuperView: CGFloat = 292
+
+    init(height: CGFloat = 292) {
+        self.heightFromSuperView = height
+    }
     // 바텀싯이 올라오는 위치 결정
     var position: FloatingPanelPosition {
         return .bottom
@@ -76,7 +85,7 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
 //            .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),
-            .half: FloatingPanelLayoutAnchor(absoluteInset: 200, edge: .bottom, referenceGuide: .safeArea),
+            .half: FloatingPanelLayoutAnchor(absoluteInset: heightFromSuperView, edge: .bottom, referenceGuide: .superview),
         ]
     }
     

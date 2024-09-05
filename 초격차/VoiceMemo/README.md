@@ -1,17 +1,17 @@
 프로젝트 계층
 
-- App
-  - app에 대한 파일들
-- Core
-  - Service:
-    뷰에 영향을 끼칠 수 있는 작업을 해주는 것들(manager)
-  - 익스텐션
-- 컴포넌트:
-  커스텀한 뷰를 넣는 곳
-- feature:
-  하나하나의 기능별 단위(온보딩, 홈, )
-- 모델:
-  뷰모델에서 사용될 스텁, DTO
+-   App
+    -   app에 대한 파일들
+-   Core
+    -   Service:
+        뷰에 영향을 끼칠 수 있는 작업을 해주는 것들(manager)
+    -   익스텐션
+-   컴포넌트:
+    커스텀한 뷰를 넣는 곳
+-   feature:
+    하나하나의 기능별 단위(온보딩, 홈, )
+-   모델:
+    뷰모델에서 사용될 스텁, DTO
 
 # **ObservableObject**
 
@@ -613,3 +613,52 @@ var body: some View {
 ```
 
 위의 텍스트뷰에 false를 줌으로써 플레이스홀더 처럼 사용 가능
+
+# AVFoundation
+
+오디오비주얼 애셋 작업, 카메라 제어, 재생 녹음등 오디오 작업, 시스템 오디오작업 등을 관리하는 프레임워크
+
+## AVKit
+
+AVFoundation의 UI작업을 도와주는 프레임워크
+
+## AVAsset
+
+시간이 지정된 오디오비주얼 미디어 객체
+QuickTime 동영상이나 MP3 오디오 파일과 같은 파일 기반 미디어와 HLS (HTTP Live Streaming)을 사용해 스트리밍된 미디어를 모델링
+
+## AVPlayer
+
+플레이어의 전송동작을 제어하기 위한 인터페이스를 제공하는 객체
+한번에 하나의 미디어만 재생가능
+이를 화면에 표시하기ㅣ 위해 AVKit, AVPlayerLayer와 같은 방식 사용
+
+## AVPlayerItem
+
+재생중인 애셋의 타이밍&프레젠테이션 상태를 모델링하는 객체
+시간과 그에 따른 현재 미디어 상태 정보를 가지고 있는 객체
+
+-   AVAsset: 그 자체로 미디어가 가진 모든 정보가 포함됨
+-   AVPlayerItem: 시간 경과에 따른 현재 상태정보를 포함
+
+## AVAudioRecorder
+
+오디오 데이터를 파일에 녹음하는 객체
+
+-   시스템 입력 장치를 통해 오디오 녹음
+-   중지하거나 지정된 시간이 될 때 까지 녹음
+-   녹음 일시 정지 및 재개
+-   녹음 수준 측정 데이터에 액세스
+
+음성변조 등 고급 기능의 사용을 위해서는 AVAudioEngine 사용 필요
+### 주로 사용되는 함수
+오디오 파일 생성 및 녹음을 위한 시스템 준비
+오디오 녹음 시작 및 재개
+특정 시간부터 오디오 녹음 시작
+표시된 시간 동안 오디오 녹음
+표시된 기간 동안 특정 시간부터 오디오 녹음
+prepareToRecord)
+record (
+record (atTime: Timelnterval)
+record (forDuration: Timelnterval)
+record(atTime: Timelnterval, forDuration: Timelnterval)

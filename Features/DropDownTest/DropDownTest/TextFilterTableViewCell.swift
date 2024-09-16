@@ -70,23 +70,22 @@ class TextFilterTableViewCell: UITableViewCell {
     }
     
     // 드롭다운 업데이트 후 표시
-    private func showDropDown() {
+    func showDropDown() {
         updateDropDown()
         dropDown.show()
     }
     
     // 드롭다운의 오프셋, 데이터 재설정
     private func updateDropDown() {
-        dropDown.width = dataTextStackView.frame.width
+        dropDown.width = dataTextStackView.frame.width - 32
         // 드롭다운 옵션들. 여기서 검색결과 필터 리로드
         dropDown.dataSource = ["Option 1", "Option 2", "Option 3","Option 1","Option 1","Option 1", "Option 2", "Option 3","Option 1","Option 1", "Option 2", "Option 3","Option 1", ]
+        // TODO: - 최대갯수 설정 필요
         dropDown.reloadAllComponents()
         // 텍스트뷰 크기가 가변적이라 크기가 업데이트 된 후에 오프셋 재설정이 필요
         self.dropDown.bottomOffset = CGPoint(x: 0, y: self.dataTextStackView.frame.height + 4)
     }
-    
-
-    
+        
 }
 
 extension TextFilterTableViewCell: UITextViewDelegate {
@@ -100,10 +99,16 @@ extension TextFilterTableViewCell: UITextViewDelegate {
             print("indexPath 없음")
             return
         }
-        // 해당 셀이 테이블뷰의 제일 위로 오도록 스크롤
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-
-        showDropDown()
+        // 0.2초 대기 후 스크롤 애니메이션 적용
+        let now = DispatchTime.now()
+        DispatchQueue.main.asyncAfter(deadline: now + 0.2) {
+            self.showDropDown()
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+//            self.showDropDown()
+//            DispatchQueue.main.asyncAfter(deadline: now + 0.5) {
+////                self.showDropDown()
+//            }
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -132,47 +137,5 @@ extension TextFilterTableViewCell: UITextViewDelegate {
             }
         }
     }
-    
-    
-//    /// 스크롤 영역확보를 위해 푸터 일시적으로 추가
-//    private func addFooterToTableView(_ tableView: UITableView) {
-//        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 400))
-//        footerView.backgroundColor = .clear
-//        tableView.tableFooterView = footerView
-//    }
-//
-//    /// 푸터 제거
-//    private func removeFooterFromTableView(_ tableView: UITableView) {
-//        tableView.tableFooterView = nil // 푸터 제거
-//    }
 
-    
 }
-
-
-
-
-//override func awakeFromNib() {
-//    super.awakeFromNib()
-//    setupTextView()
-//    setupDropDown()
-//}
-//
-//private func setupTextView() {
-//    // UITextView에 포커스가 잡힐 때 드롭다운을 표시
-//    textView.rx.didBeginEditing
-//        .subscribe(onNext: { [weak self] in
-//            self?.dropDown.show()
-//        })
-//        .disposed(by: disposeBag)
-//}
-//
-//private func setupDropDown() {
-//    dropDown.anchorView = textView // 드롭다운이 붙을 뷰 설정
-//    dropDown.dataSource = ["Option 1", "Option 2", "Option 3"] // 드롭다운 옵션들
-//    
-//    // 드롭다운에서 선택된 값을 UITextView에 반영
-//    dropDown.selectionAction = { [weak self] (index: Int, item: String) in
-//        self?.textView.text = item
-//    }
-//}

@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,21 +18,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sJH-5V-Bti">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ski-6w-xKq">
+                                <rect key="frame" x="0.0" y="852" width="393" height="48"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcZ-Vu-HhF">
+                                        <rect key="frame" x="20" y="0.0" width="321" height="14"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-ma-3FE">
+                                        <rect key="frame" x="341" y="0.0" width="32" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="I22-Ck-BFG"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Primary"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="keyboard.chevron.compact.down" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="MainBackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="cb2-Td-QW6"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ski-6w-xKq" firstAttribute="top" secondItem="sJH-5V-Bti" secondAttribute="bottom" id="5hT-Zb-vgX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="ski-6w-xKq" secondAttribute="leading" id="JXp-gL-BlE"/>
+                            <constraint firstItem="ski-6w-xKq" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="48" id="Ku0-kT-m8X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sJH-5V-Bti" secondAttribute="trailing" id="Qg8-LR-pLB"/>
                             <constraint firstItem="sJH-5V-Bti" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WHc-ds-dcI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sJH-5V-Bti" secondAttribute="bottom" id="cPx-Gd-kVH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ski-6w-xKq" secondAttribute="trailing" id="iTh-Xk-Jov"/>
                             <constraint firstItem="sJH-5V-Bti" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tHa-eN-AyN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dataTableView" destination="sJH-5V-Bti" id="yWe-Hi-hgy"/>
+                        <outlet property="hideKeyboardButton" destination="ghd-ma-3FE" id="k0Y-RE-91M"/>
+                        <outlet property="keyboardBarStackView" destination="ski-6w-xKq" id="vqD-ED-GJR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -40,6 +69,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="keyboard.chevron.compact.down" catalog="system" width="128" height="100"/>
+        <namedColor name="MainBackground">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

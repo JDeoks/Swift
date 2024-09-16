@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // 키보드가 나타나거나 사라질 때 DropDown의 위치를 적절히 조정하여 드롭다운이 화면에서 키보드와 겹치지 않도록 처리
-        DropDown.startListeningToKeyboard()
+//        DropDown.startListeningToKeyboard()
         DropDown.appearance().setupCornerRadius(4)
         return true
     }

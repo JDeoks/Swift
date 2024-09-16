@@ -9,12 +9,15 @@ import UIKit
 import RxSwift
 import SnapKit
 import DropDown
+import RxKeyboard
 
 class ViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
     @IBOutlet var dataTableView: UITableView!
+    @IBOutlet var keyboardBarStackView: UIStackView!
+    @IBOutlet var hideKeyboardButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,17 +51,30 @@ class ViewController: UIViewController {
     }
     
     private func action() {
-//        closeButton.rx.tap
-//            .subscribe { _ in
-//                self.dismiss(animated: true)
-//            }
-//            .disposed(by: disposeBag)
-//        
-//        hideKeyboardButton.rx.tap
-//            .subscribe { _ in
-//                self.view.endEditing(true)
-//            }
-//            .disposed(by: disposeBag)
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { keyboardHeight in
+                let isVisible = keyboardHeight > 0
+                if isVisible {
+                    self.keyboardBarStackView.snp.updateConstraints {
+                        $0.bottom.equalToSuperview().offset(-keyboardHeight)
+                    }
+                    self.view.layoutIfNeeded()
+                } else {
+                    self.keyboardBarStackView.snp.updateConstraints {
+                        $0.bottom.equalToSuperview().offset(48)
+                    }
+                    self.view.layoutIfNeeded()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        hideKeyboardButton.rx.tap
+            .subscribe { _ in
+                self.view.endEditing(true)
+            }
+            .disposed(by: disposeBag)
+
     }
 
 }
@@ -77,16 +93,41 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
-//
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        200
-//    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        100
+    }
 }
 extension ViewController: UIScrollViewDelegate {
+        
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.view.endEditing(true)
+        if scrolledByUser {
+            self.view.endEditing(true)
+        } else {
+            if let visibleCells = dataTableView.visibleCells as? [TextFilterTableViewCell] {
+                for cell in visibleCells {
+                    if cell.dataTextView.isFirstResponder {
+                        cell.showDropDown()  // 드롭다운 위치를 업데이트
+                    }
+                }
+            }
+        }
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrolledByUser = true
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrolledByUser = false
+    }
+
 }
 
 

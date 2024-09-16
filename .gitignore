@@ -60,3 +60,6 @@ Podfile.lock
 # Carthage build directory
 Carthage/Checkouts
 Carthage/Build
+
+# 서브모듈
+DropDown/

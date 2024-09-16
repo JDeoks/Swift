@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="452" id="KGk-i7-Jjw" customClass="TextFilterTableViewCell" customModule="PatchNote_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="452"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="452"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Hz2-RK-e8N">
+                        <rect key="frame" x="20" y="8" width="441" height="436"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Aa-XG-ywy">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="GWW-Vb-yjp"/>
+                                    <constraint firstAttribute="height" constant="40" id="PV6-Fm-YVj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="MainText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vOM-EA-sGw">
+                                <rect key="frame" x="60" y="0.0" width="381" height="146"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="현장을 입력하세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="avA-mW-VHs">
+                                        <rect key="frame" x="10" y="9" width="361" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="MainText"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" name="SubBackground"/>
+                                <edgeInsets key="layoutMargins" top="9" left="10" bottom="9" right="10"/>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="MainBackground"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Hz2-RK-e8N" secondAttribute="bottom" constant="8" id="6vL-DT-OLi"/>
+                    <constraint firstAttribute="trailing" secondItem="Hz2-RK-e8N" secondAttribute="trailing" constant="20" id="9f0-mq-gDu"/>
+                    <constraint firstItem="Hz2-RK-e8N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="I5g-kr-YTB"/>
+                    <constraint firstItem="Hz2-RK-e8N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="X1q-Cs-BcM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="MainBackground"/>
+            <connections>
+                <outlet property="categoryLabel" destination="9Aa-XG-ywy" id="sJV-i8-Qks"/>
+                <outlet property="dataTextStackView" destination="vOM-EA-sGw" id="c6a-hs-8Hl"/>
+                <outlet property="dataTextView" destination="avA-mW-VHs" id="xKy-zd-G7P"/>
+            </connections>
+            <point key="canvasLocation" x="162.59541984732823" y="163.38028169014086"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="MainBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainText">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SubBackground">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

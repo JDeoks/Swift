@@ -19,6 +19,8 @@
 		2A07AC6D2C9860D4007A77A7 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2A07AC6C2C9860D4007A77A7 /* RxRelay */; };
 		2A07AC6F2C9860D4007A77A7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A07AC6E2C9860D4007A77A7 /* RxSwift */; };
 		2A07AC722C9860FA007A77A7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2A07AC712C9860FA007A77A7 /* SnapKit */; };
+		2A07AC742C986427007A77A7 /* Jamo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07AC732C986427007A77A7 /* Jamo.swift */; };
+		2A07AC762C986ADD007A77A7 /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07AC752C986ADD007A77A7 /* DropDownTableViewCell.swift */; };
 		45B64002657F44B89244023E /* Pods_DropDownTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2B8AC089D512D5A1938B73 /* Pods_DropDownTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		2A07AC5C2C9858A3007A77A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A07AC652C98603D007A77A7 /* TextFilterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFilterTableViewCell.xib; sourceTree = "<group>"; };
 		2A07AC662C98603D007A77A7 /* TextFilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFilterTableViewCell.swift; sourceTree = "<group>"; };
+		2A07AC732C986427007A77A7 /* Jamo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jamo.swift; sourceTree = "<group>"; };
+		2A07AC752C986ADD007A77A7 /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		35B1F67FB26798EF0EDA99C0 /* Pods-DropDownTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropDownTest.debug.xcconfig"; path = "Target Support Files/Pods-DropDownTest/Pods-DropDownTest.debug.xcconfig"; sourceTree = "<group>"; };
 		7A2B8AC089D512D5A1938B73 /* Pods_DropDownTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropDownTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B134F9E135412CCD1BFBBB6F /* Pods-DropDownTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropDownTest.release.xcconfig"; path = "Target Support Files/Pods-DropDownTest/Pods-DropDownTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,10 +84,12 @@
 				2A07AC522C9858A2007A77A7 /* ViewController.swift */,
 				2A07AC542C9858A2007A77A7 /* Main.storyboard */,
 				2A07AC572C9858A3007A77A7 /* Assets.xcassets */,
+				2A07AC752C986ADD007A77A7 /* DropDownTableViewCell.swift */,
 				2A07AC592C9858A3007A77A7 /* LaunchScreen.storyboard */,
 				2A07AC662C98603D007A77A7 /* TextFilterTableViewCell.swift */,
 				2A07AC652C98603D007A77A7 /* TextFilterTableViewCell.xib */,
 				2A07AC5C2C9858A3007A77A7 /* Info.plist */,
+				2A07AC732C986427007A77A7 /* Jamo.swift */,
 			);
 			path = DropDownTest;
 			sourceTree = "<group>";
@@ -231,9 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A07AC742C986427007A77A7 /* Jamo.swift in Sources */,
 				2A07AC532C9858A2007A77A7 /* ViewController.swift in Sources */,
 				2A07AC4F2C9858A2007A77A7 /* AppDelegate.swift in Sources */,
 				2A07AC682C98603D007A77A7 /* TextFilterTableViewCell.swift in Sources */,
+				2A07AC762C986ADD007A77A7 /* DropDownTableViewCell.swift in Sources */,
 				2A07AC512C9858A2007A77A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

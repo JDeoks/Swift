@@ -6,54 +6,63 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2A71DD242D1437EB00607999 /* Instructions in Frameworks */ = {isa = PBXBuildFile; productRef = 2A71DD232D1437EB00607999 /* Instructions */; };
+		2A71DD272D1437F400607999 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2A71DD262D1437F400607999 /* SnapKit */; };
+		2A71DD2A2D1437FB00607999 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2A71DD292D1437FB00607999 /* Then */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		2A5ABA402D48F32500BF6C9B /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A71DD082D14379700607999 /* InstructionsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstructionsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2A5ABA522D48F32600BF6C9B /* Exceptions for "CoreDataTest" folder in "CoreDataTest" target */ = {
+		2A71DD1A2D14379900607999 /* Exceptions for "InstructionsTest" folder in "InstructionsTest" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 2A5ABA3F2D48F32500BF6C9B /* CoreDataTest */;
+			target = 2A71DD072D14379700607999 /* InstructionsTest */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2A5ABA422D48F32500BF6C9B /* CoreDataTest */ = {
+		2A71DD0A2D14379700607999 /* InstructionsTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				2A5ABA522D48F32600BF6C9B /* Exceptions for "CoreDataTest" folder in "CoreDataTest" target */,
+				2A71DD1A2D14379900607999 /* Exceptions for "InstructionsTest" folder in "InstructionsTest" target */,
 			);
-			path = CoreDataTest;
+			path = InstructionsTest;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A5ABA3D2D48F32500BF6C9B /* Frameworks */ = {
+		2A71DD052D14379700607999 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A71DD242D1437EB00607999 /* Instructions in Frameworks */,
+				2A71DD2A2D1437FB00607999 /* Then in Frameworks */,
+				2A71DD272D1437F400607999 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A5ABA372D48F32500BF6C9B = {
+		2A71DCFF2D14379700607999 = {
 			isa = PBXGroup;
 			children = (
-				2A5ABA422D48F32500BF6C9B /* CoreDataTest */,
-				2A5ABA412D48F32500BF6C9B /* Products */,
+				2A71DD0A2D14379700607999 /* InstructionsTest */,
+				2A71DD092D14379700607999 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2A5ABA412D48F32500BF6C9B /* Products */ = {
+		2A71DD092D14379700607999 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A5ABA402D48F32500BF6C9B /* CoreDataTest.app */,
+				2A71DD082D14379700607999 /* InstructionsTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +70,72 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A5ABA3F2D48F32500BF6C9B /* CoreDataTest */ = {
+		2A71DD072D14379700607999 /* InstructionsTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A5ABA532D48F32600BF6C9B /* Build configuration list for PBXNativeTarget "CoreDataTest" */;
+			buildConfigurationList = 2A71DD1B2D14379900607999 /* Build configuration list for PBXNativeTarget "InstructionsTest" */;
 			buildPhases = (
-				2A5ABA3C2D48F32500BF6C9B /* Sources */,
-				2A5ABA3D2D48F32500BF6C9B /* Frameworks */,
-				2A5ABA3E2D48F32500BF6C9B /* Resources */,
+				2A71DD042D14379700607999 /* Sources */,
+				2A71DD052D14379700607999 /* Frameworks */,
+				2A71DD062D14379700607999 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2A5ABA422D48F32500BF6C9B /* CoreDataTest */,
+				2A71DD0A2D14379700607999 /* InstructionsTest */,
 			);
-			name = CoreDataTest;
+			name = InstructionsTest;
 			packageProductDependencies = (
+				2A71DD232D1437EB00607999 /* Instructions */,
+				2A71DD262D1437F400607999 /* SnapKit */,
+				2A71DD292D1437FB00607999 /* Then */,
 			);
-			productName = CoreDataTest;
-			productReference = 2A5ABA402D48F32500BF6C9B /* CoreDataTest.app */;
+			productName = InstructionsTest;
+			productReference = 2A71DD082D14379700607999 /* InstructionsTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2A5ABA382D48F32500BF6C9B /* Project object */ = {
+		2A71DD002D14379700607999 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					2A5ABA3F2D48F32500BF6C9B = {
+					2A71DD072D14379700607999 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 2A5ABA3B2D48F32500BF6C9B /* Build configuration list for PBXProject "CoreDataTest" */;
+			buildConfigurationList = 2A71DD032D14379700607999 /* Build configuration list for PBXProject "InstructionsTest" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 2A5ABA372D48F32500BF6C9B;
+			mainGroup = 2A71DCFF2D14379700607999;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2A71DD222D1437EB00607999 /* XCRemoteSwiftPackageReference "Instructions" */,
+				2A71DD252D1437F400607999 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2A71DD282D1437FB00607999 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 2A5ABA412D48F32500BF6C9B /* Products */;
+			productRefGroup = 2A71DD092D14379700607999 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A5ABA3F2D48F32500BF6C9B /* CoreDataTest */,
+				2A71DD072D14379700607999 /* InstructionsTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A5ABA3E2D48F32500BF6C9B /* Resources */ = {
+		2A71DD062D14379700607999 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +145,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A5ABA3C2D48F32500BF6C9B /* Sources */ = {
+		2A71DD042D14379700607999 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +155,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2A5ABA542D48F32600BF6C9B /* Debug */ = {
+		2A71DD1C2D14379900607999 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -147,7 +164,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39JATSZXJT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = InstructionsTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -158,7 +175,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deok.CoreDataTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deok.InstructionsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -166,7 +183,7 @@
 			};
 			name = Debug;
 		};
-		2A5ABA552D48F32600BF6C9B /* Release */ = {
+		2A71DD1D2D14379900607999 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -175,7 +192,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39JATSZXJT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = InstructionsTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -186,7 +203,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deok.CoreDataTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deok.InstructionsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -194,7 +211,7 @@
 			};
 			name = Release;
 		};
-		2A5ABA562D48F32600BF6C9B /* Debug */ = {
+		2A71DD1E2D14379900607999 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,7 +274,7 @@
 			};
 			name = Debug;
 		};
-		2A5ABA572D48F32600BF6C9B /* Release */ = {
+		2A71DD1F2D14379900607999 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,25 +333,70 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A5ABA3B2D48F32500BF6C9B /* Build configuration list for PBXProject "CoreDataTest" */ = {
+		2A71DD032D14379700607999 /* Build configuration list for PBXProject "InstructionsTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A5ABA562D48F32600BF6C9B /* Debug */,
-				2A5ABA572D48F32600BF6C9B /* Release */,
+				2A71DD1E2D14379900607999 /* Debug */,
+				2A71DD1F2D14379900607999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A5ABA532D48F32600BF6C9B /* Build configuration list for PBXNativeTarget "CoreDataTest" */ = {
+		2A71DD1B2D14379900607999 /* Build configuration list for PBXNativeTarget "InstructionsTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A5ABA542D48F32600BF6C9B /* Debug */,
-				2A5ABA552D48F32600BF6C9B /* Release */,
+				2A71DD1C2D14379900607999 /* Debug */,
+				2A71DD1D2D14379900607999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A71DD222D1437EB00607999 /* XCRemoteSwiftPackageReference "Instructions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ephread/Instructions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+		2A71DD252D1437F400607999 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		2A71DD282D1437FB00607999 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A71DD232D1437EB00607999 /* Instructions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A71DD222D1437EB00607999 /* XCRemoteSwiftPackageReference "Instructions" */;
+			productName = Instructions;
+		};
+		2A71DD262D1437F400607999 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A71DD252D1437F400607999 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		2A71DD292D1437FB00607999 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A71DD282D1437FB00607999 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 2A5ABA382D48F32500BF6C9B /* Project object */;
+	rootObject = 2A71DD002D14379700607999 /* Project object */;
 }

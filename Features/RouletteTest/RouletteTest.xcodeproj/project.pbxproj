@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		2A5ABA402D48F32500BF6C9B /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD02F522D395C99007276FB /* RouletteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2A5ABA522D48F32600BF6C9B /* Exceptions for "CoreDataTest" folder in "CoreDataTest" target */ = {
+		2AD02F672D395C9C007276FB /* Exceptions for "RouletteTest" folder in "RouletteTest" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 2A5ABA3F2D48F32500BF6C9B /* CoreDataTest */;
+			target = 2AD02F512D395C99007276FB /* RouletteTest */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2A5ABA422D48F32500BF6C9B /* CoreDataTest */ = {
+		2AD02F542D395C99007276FB /* RouletteTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				2A5ABA522D48F32600BF6C9B /* Exceptions for "CoreDataTest" folder in "CoreDataTest" target */,
+				2AD02F672D395C9C007276FB /* Exceptions for "RouletteTest" folder in "RouletteTest" target */,
 			);
-			path = CoreDataTest;
+			path = RouletteTest;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A5ABA3D2D48F32500BF6C9B /* Frameworks */ = {
+		2AD02F4F2D395C99007276FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A5ABA372D48F32500BF6C9B = {
+		2AD02F492D395C99007276FB = {
 			isa = PBXGroup;
 			children = (
-				2A5ABA422D48F32500BF6C9B /* CoreDataTest */,
-				2A5ABA412D48F32500BF6C9B /* Products */,
+				2AD02F542D395C99007276FB /* RouletteTest */,
+				2AD02F532D395C99007276FB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2A5ABA412D48F32500BF6C9B /* Products */ = {
+		2AD02F532D395C99007276FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A5ABA402D48F32500BF6C9B /* CoreDataTest.app */,
+				2AD02F522D395C99007276FB /* RouletteTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A5ABA3F2D48F32500BF6C9B /* CoreDataTest */ = {
+		2AD02F512D395C99007276FB /* RouletteTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A5ABA532D48F32600BF6C9B /* Build configuration list for PBXNativeTarget "CoreDataTest" */;
+			buildConfigurationList = 2AD02F682D395C9C007276FB /* Build configuration list for PBXNativeTarget "RouletteTest" */;
 			buildPhases = (
-				2A5ABA3C2D48F32500BF6C9B /* Sources */,
-				2A5ABA3D2D48F32500BF6C9B /* Frameworks */,
-				2A5ABA3E2D48F32500BF6C9B /* Resources */,
+				2AD02F4E2D395C99007276FB /* Sources */,
+				2AD02F4F2D395C99007276FB /* Frameworks */,
+				2AD02F502D395C99007276FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2A5ABA422D48F32500BF6C9B /* CoreDataTest */,
+				2AD02F542D395C99007276FB /* RouletteTest */,
 			);
-			name = CoreDataTest;
+			name = RouletteTest;
 			packageProductDependencies = (
 			);
-			productName = CoreDataTest;
-			productReference = 2A5ABA402D48F32500BF6C9B /* CoreDataTest.app */;
+			productName = RouletteTest;
+			productReference = 2AD02F522D395C99007276FB /* RouletteTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2A5ABA382D48F32500BF6C9B /* Project object */ = {
+		2AD02F4A2D395C99007276FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					2A5ABA3F2D48F32500BF6C9B = {
+					2AD02F512D395C99007276FB = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 2A5ABA3B2D48F32500BF6C9B /* Build configuration list for PBXProject "CoreDataTest" */;
+			buildConfigurationList = 2AD02F4D2D395C99007276FB /* Build configuration list for PBXProject "RouletteTest" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 2A5ABA372D48F32500BF6C9B;
+			mainGroup = 2AD02F492D395C99007276FB;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 2A5ABA412D48F32500BF6C9B /* Products */;
+			productRefGroup = 2AD02F532D395C99007276FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A5ABA3F2D48F32500BF6C9B /* CoreDataTest */,
+				2AD02F512D395C99007276FB /* RouletteTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A5ABA3E2D48F32500BF6C9B /* Resources */ = {
+		2AD02F502D395C99007276FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A5ABA3C2D48F32500BF6C9B /* Sources */ = {
+		2AD02F4E2D395C99007276FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2A5ABA542D48F32600BF6C9B /* Debug */ = {
+		2AD02F692D395C9C007276FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39JATSZXJT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = RouletteTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -158,7 +158,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deok.CoreDataTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deok.RouletteTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -166,7 +166,7 @@
 			};
 			name = Debug;
 		};
-		2A5ABA552D48F32600BF6C9B /* Release */ = {
+		2AD02F6A2D395C9C007276FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -175,7 +175,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39JATSZXJT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = RouletteTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -186,7 +186,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deok.CoreDataTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deok.RouletteTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -194,7 +194,7 @@
 			};
 			name = Release;
 		};
-		2A5ABA562D48F32600BF6C9B /* Debug */ = {
+		2AD02F6B2D395C9C007276FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,7 +257,7 @@
 			};
 			name = Debug;
 		};
-		2A5ABA572D48F32600BF6C9B /* Release */ = {
+		2AD02F6C2D395C9C007276FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,25 +316,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A5ABA3B2D48F32500BF6C9B /* Build configuration list for PBXProject "CoreDataTest" */ = {
+		2AD02F4D2D395C99007276FB /* Build configuration list for PBXProject "RouletteTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A5ABA562D48F32600BF6C9B /* Debug */,
-				2A5ABA572D48F32600BF6C9B /* Release */,
+				2AD02F6B2D395C9C007276FB /* Debug */,
+				2AD02F6C2D395C9C007276FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A5ABA532D48F32600BF6C9B /* Build configuration list for PBXNativeTarget "CoreDataTest" */ = {
+		2AD02F682D395C9C007276FB /* Build configuration list for PBXNativeTarget "RouletteTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A5ABA542D48F32600BF6C9B /* Debug */,
-				2A5ABA552D48F32600BF6C9B /* Release */,
+				2AD02F692D395C9C007276FB /* Debug */,
+				2AD02F6A2D395C9C007276FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2A5ABA382D48F32500BF6C9B /* Project object */;
+	rootObject = 2AD02F4A2D395C99007276FB /* Project object */;
 }

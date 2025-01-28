@@ -79,7 +79,7 @@ class TextFilterTableViewCell: UITableViewCell {
     private func updateDropDown() {
         dropDown.width = dataTextStackView.frame.width - 32
         // 드롭다운 옵션들. 여기서 검색결과 필터 리로드
-        dropDown.dataSource = ["Option 1", "Option 2", "Option 3","Option 1","Option 1","Option 1", "Option 2", "Option 3","Option 1","Option 1", "Option 2", "Option 3","Option 1", ]
+        dropDown.dataSource = ["Option 1Option 1Option 1Option 1Option 1", "Option 2", "Option 3","Option 1","Option 1","Option 1", "Option 2", "Option 3","Option 1","Option 1", "Option 2", "Option 3","Option 1", ]
         // TODO: - 최대갯수 설정 필요
         dropDown.reloadAllComponents()
         // 텍스트뷰 크기가 가변적이라 크기가 업데이트 된 후에 오프셋 재설정이 필요

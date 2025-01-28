@@ -30,24 +30,6 @@ class ViewController: UIViewController {
         dataTableView.dataSource = self
         dataTableView.delegate = self
         dataTableView.registerCell(ofType: TextFilterTableViewCell.self)
-//        
-//        let dropDown = DropDown()
-//
-//        // The view to which the drop down will appear on
-//        dropDown.anchorView = view // UIView or UIBarButtonItem
-//
-//        // The list of items to display. Can be changed dynamically
-//        dropDown.dataSource = ["Car", "Motorcycle", "Truck"]
-//
-//        /*** IMPORTANT PART FOR CUSTOM CELLS ***/
-//        dropDown.cellNib = UINib(nibName: "MyCell", bundle: nil)
-//
-//        dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-//           guard let cell = cell as? DropDownCell else { return }
-//
-//           // Setup your custom UI components
-////           cell.logoImageView.image = UIImage(named: "logo_\(index)")
-//        }
     }
     
     private func action() {

@@ -37,5 +37,14 @@ class ViewController: UIViewController {
       }
     }
   }
+  
+  func querying() {
+    let request: NSFetchRequest<TwitterUser> = TwitterUser.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(
+      key: "screenName",
+      ascending: true,
+      selector: #selector(NSString.localizedStandardCompare(_:))
+    )
+  }
 }
 

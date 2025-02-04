@@ -50,5 +50,5 @@ class OfflineDefect: Object {
   
   @Persisted var beforeDescription: String?
 
-  @Persisted var beforeImages = List<OfflineImage>()
+  @Persisted var beforeImages: List<OfflineImage>
 }
